@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rocky Li — Builder, Explorer, Thinker</title>
+    <title>林翼 — 构建者、探索者、思考者</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -24,7 +24,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', 'Inter', sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -44,6 +44,34 @@
             max-width: 720px;
             margin: 0 auto;
             padding: 0 24px;
+        }
+
+        /* Lang toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            z-index: 1000;
+            display: flex;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .lang-toggle a {
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .lang-toggle a.active {
+            background: var(--accent);
+            color: white;
+        }
+        .lang-toggle a:hover:not(.active) {
+            color: var(--text);
         }
 
         /* Hero */
@@ -91,10 +119,10 @@
         }
 
         h1 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
             font-size: 48px;
             font-weight: 700;
-            letter-spacing: -1.5px;
+            letter-spacing: -1px;
             line-height: 1.1;
             margin-bottom: 16px;
         }
@@ -106,10 +134,10 @@
         }
 
         .hero-sub {
-            font-size: 18px;
+            font-size: 17px;
             color: var(--text-muted);
             max-width: 500px;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .hero-links {
@@ -167,7 +195,7 @@
         }
 
         h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
             font-size: 28px;
             font-weight: 600;
             letter-spacing: -0.5px;
@@ -184,7 +212,7 @@
         .about-text {
             color: var(--text-muted);
             font-size: 16px;
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
         .about-text strong {
@@ -192,7 +220,7 @@
             font-weight: 500;
         }
 
-        /* Experience */
+        /* Timeline */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -228,7 +256,7 @@
         .timeline-content p {
             font-size: 14px;
             color: var(--text-muted);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* Projects */
@@ -269,7 +297,7 @@
         .project-card p {
             font-size: 13px;
             color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .project-tag {
@@ -301,9 +329,7 @@
         .gaming-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 2px;
             background: linear-gradient(90deg, var(--accent), var(--orange));
         }
@@ -348,7 +374,7 @@
             border-radius: 0 8px 8px 0;
             font-size: 15px;
             color: var(--text-muted);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .belief em {
@@ -409,34 +435,6 @@
             }
         }
 
-        /* Lang toggle */
-        .lang-toggle {
-            position: fixed;
-            top: 20px;
-            right: 24px;
-            z-index: 1000;
-            display: flex;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .lang-toggle a {
-            padding: 6px 14px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .lang-toggle a.active {
-            background: var(--accent);
-            color: white;
-        }
-        .lang-toggle a:hover:not(.active) {
-            color: var(--text);
-        }
-
         /* Animations */
         .fade-up {
             opacity: 0;
@@ -455,23 +453,23 @@
 </head>
 <body>
     <div class="lang-toggle">
-        <a href="rocky-homepage.html" class="active">EN</a>
-        <a href="rocky-homepage-cn.html">中文</a>
+        <a href="rocky-homepage.html">EN</a>
+        <a href="rocky-homepage-cn.html" class="active">中文</a>
     </div>
+
     <div class="container">
         <!-- Hero -->
         <section class="hero">
             <div class="fade-up">
                 <div class="hero-badge">
                     <span class="dot"></span>
-                    Open to opportunities
+                    正在寻找新机会
                 </div>
             </div>
-            <h1 class="fade-up">Hi, I'm <span>Rocky</span></h1>
+            <h1 class="fade-up">你好，我是<span>林翼</span></h1>
             <p class="hero-sub fade-up">
-                Builder at the intersection of cloud infrastructure, AI, and human behavior. 
-                5 years at Huawei building cloud ecosystems across Asia-Pacific. 
-                Now exploring what comes next.
+                5 年华为云，从亚太到非洲，做软件生态与市场拓展。
+                现在专注于 AI 产品开发，用大模型解决真实问题。
             </p>
             <div class="hero-links fade-up">
                 <a href="https://www.linkedin.com/in/linyi-li-899200171/" class="btn-primary" target="_blank">LinkedIn</a>
@@ -484,24 +482,20 @@
 
         <!-- About -->
         <section>
-            <div class="section-label">About</div>
+            <div class="section-label">About · 关于我</div>
             <div class="about-text">
                 <p>
-                    I spent 5 years at <strong>Huawei Cloud</strong> helping software partners succeed commercially — 
-                    building ecosystems from Singapore to Jakarta. I've seen how platforms work from the inside: 
-                    cloud is the OS, partners are the apps.
+                    在<strong>华为云</strong>工作 5 年，负责软件生态的商务拓展与落地——覆盖新加坡、雅加达、拉各斯等市场。
+                    这段经历让我深入理解了平台型业务的运作：如何让第三方在你的生态里成功。
                 </p>
                 <br>
                 <p>
-                    Now I'm deep in the <strong>AI vibe coding</strong> wave — building tools, experimenting with LLMs, 
-                    and figuring out how AI changes the way we create and communicate. 
-                    I believe <strong>information transfer</strong> is the deepest lever for change, 
-                    and LLMs are rewriting the rules.
+                    离开华为后，转向 <strong>AI 产品开发</strong>。当前关注大模型应用层——用 AI 构建解决具体问题的工具和产品。
+                    持续思考的一个命题：<strong>信息的流动方式如何塑造人的决策与行为</strong>。
                 </p>
                 <br>
                 <p>
-                    Background: <strong>Economic Statistics</strong> (ZUEL) → <strong>Data Science & Analytics</strong> (University of Leeds).
-                    Based in the UK.
+                    <strong>中南财经政法大学</strong>经济统计学（本科） · <strong>利兹大学</strong>数据科学与分析（硕士）。现居英国。
                 </p>
             </div>
         </section>
@@ -510,36 +504,36 @@
 
         <!-- Experience -->
         <section>
-            <div class="section-label">Experience</div>
+            <div class="section-label">Experience · 经历</div>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">2024 — 2025</div>
                     <div class="timeline-content">
-                        <h3>Cloud Ecosystem Manager</h3>
-                        <div class="company">Huawei Cloud · Jakarta, Indonesia</div>
-                        <p>Local ecosystem development for Huawei Cloud in Indonesia. Partner enablement, go-to-market strategy.</p>
+                        <h3>云生态经理</h3>
+                        <div class="company">华为云 · 雅加达，印尼</div>
+                        <p>负责印尼本地软件生态建设，推动 ISV 云化迁移与联合市场推广。</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2020 — 2024</div>
                     <div class="timeline-content">
-                        <h3>Partner Development Manager</h3>
-                        <div class="company">Huawei Cloud · Asia-Pacific, Africa, Latin America</div>
-                        <p>Software ecosystem across APAC, Africa, and LATAM. Helped software partners achieve commercial success on Huawei Cloud.</p>
+                        <h3>伙伴发展经理</h3>
+                        <div class="company">华为云 · 亚太 / 非洲 / 拉美</div>
+                        <p>跨三个大区的软件生态拓展，覆盖商务开发、方案适配到落地交付。</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2018 — 2019</div>
                     <div class="timeline-content">
-                        <h3>MSc Data Science & Analytics</h3>
-                        <div class="company">University of Leeds</div>
+                        <h3>数据科学与分析 硕士</h3>
+                        <div class="company">利兹大学 · University of Leeds</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2014 — 2018</div>
                     <div class="timeline-content">
-                        <h3>BSc Economic Statistics</h3>
-                        <div class="company">Zhongnan University of Economics and Law</div>
+                        <h3>经济统计学 本科</h3>
+                        <div class="company">中南财经政法大学</div>
                     </div>
                 </div>
             </div>
@@ -549,32 +543,31 @@
 
         <!-- Projects -->
         <section>
-            <div class="section-label">Projects</div>
-
+            <div class="section-label">Projects · 项目</div>
             <div class="projects-grid">
                 <a href="https://shili365.com" target="_blank" class="project-card">
                     <div class="project-icon"><img src="shili-logo.png" alt="食历" style="width:56px;height:56px;border-radius:14px;object-fit:cover;"></div>
                     <h3>Freshkeeper 食历</h3>
-                    <p>AI-powered kitchen inventory app. Snap a photo and let AI identify your ingredients, track expiry dates, reduce food waste.</p>
-                    <span class="project-tag">Mobile App · AI</span>
+                    <p>AI 厨房助手——拍照识别食材、追踪保质期、减少食物浪费。</p>
+                    <span class="project-tag">移动 App · AI</span>
                 </a>
                 <a href="https://chromewebstore.google.com/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E4%B8%93%E6%B3%A8/gkbdjmhnoojceeebecelomifpknihgje" target="_blank" class="project-card">
                     <div class="project-icon"><img src="interlock-logo.png" alt="Interlock" style="width:56px;height:56px;border-radius:14px;object-fit:cover;"></div>
                     <h3>Interlock 沉浸式专注</h3>
-                    <p>Chrome extension to reduce digital distraction and reclaim focus.</p>
-                    <span class="project-tag">Chrome Extension</span>
+                    <p>屏蔽网页干扰、帮助用户找回深度专注的 Chrome 扩展。</p>
+                    <span class="project-tag">Chrome 扩展</span>
                 </a>
                 <a href="https://www.youtube.com/@Rockyislearning" target="_blank" class="project-card">
                     <div class="project-icon">🏔️</div>
-                    <h3>Voices from the Arctic</h3>
-                    <p>Documentary interviews from an Arctic cruise expedition. Stories from the edge of the world.</p>
-                    <span class="project-tag">Documentary · YouTube</span>
+                    <h3>北极人物志</h3>
+                    <p>北极邮轮上的人物采访纪录片，记录极地旅途中遇到的人与故事。</p>
+                    <span class="project-tag">纪录片 · YouTube</span>
                 </a>
                 <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_f3eaeccc56af" target="_blank" class="project-card">
                     <div class="project-icon">📡</div>
-                    <h3>Silicon Valley Weekly</h3>
-                    <p>Weekly AI intelligence digest — tracking 34 Silicon Valley builders & founders on X. AI-assisted curation, human editorial.</p>
-                    <span class="project-tag">WeChat Newsletter · Weekly</span>
+                    <h3>硅谷大佬们这周说了什么</h3>
+                    <p>每周追踪 34 位硅谷 AI 创始人在 X 上的最新观点，AI 采集、人工筛选。</p>
+                    <span class="project-tag">微信公众号 · 每周更新</span>
                 </a>
             </div>
         </section>
@@ -583,22 +576,22 @@
 
         <!-- Gaming -->
         <section>
-            <div class="section-label">Past Life: Competitive Gaming</div>
+            <div class="section-label">Past Life · 上一段人生：职业电竞</div>
             <div class="gaming-stats">
                 <div class="gaming-card">
-                    <div class="game-name">Hearthstone 炉石传说</div>
-                    <div class="rank">Rank #1</div>
-                    <div class="rank-detail">China Server</div>
+                    <div class="game-name">炉石传说</div>
+                    <div class="rank">全国第一</div>
+                    <div class="rank-detail">国服天梯</div>
                 </div>
                 <div class="gaming-card">
                     <div class="game-name">Dota 2</div>
-                    <div class="rank">Top 100</div>
-                    <div class="rank-detail">China Server · Tried out for FTD Academy</div>
+                    <div class="rank">前 100</div>
+                    <div class="rank-detail">国服天梯 · 曾入选 FTD 战队青训</div>
                 </div>
             </div>
-            <p style="font-size: 14px; color: var(--text-muted); margin-top: 16px; line-height: 1.6;">
-                Competed at the highest amateur level in two of gaming's most demanding titles. 
-                Discovered that talent without obsession only gets you so far — then pivoted that intensity into building things.
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 16px; line-height: 1.7;">
+                在两款高竞技强度的游戏中都达到了业余顶尖水平。
+                竞技留下的习惯——复盘、拆解、持续优化——后来成了做产品的底层方法论。
             </p>
         </section>
 
@@ -606,19 +599,19 @@
 
         <!-- Beliefs -->
         <section>
-            <div class="section-label">What I Believe</div>
+            <div class="section-label">What I Believe · 我相信</div>
             <div class="beliefs">
                 <div class="belief">
-                    <em>Build tools that change behavior.</em> Technology matters when it makes ordinary people stronger and freer.
+                    <em>好的工具改变人的行为。</em>技术的价值不在于复杂，在于让普通人获得原本没有的能力。
                 </div>
                 <div class="belief">
-                    <em>"What not to do" is easier to stick to than "what to do."</em> Constraints create clarity.
+                    <em>「不做什么」比「做什么」更容易坚持。</em>明确的边界带来真正的专注。
                 </div>
                 <div class="belief">
-                    <em>Information transfer is everything.</em> From cloud ecosystems to LLMs — I keep coming back to the same obsession: how do we move knowledge between minds?
+                    <em>信息的流动方式决定世界的运转方式。</em>从云生态到大模型，我一直在思考同一个问题：知识如何更高效地在人与人之间传递？
                 </div>
                 <div class="belief">
-                    <em>The meaning of life is to search for meaning.</em> So go experience things.
+                    <em>意义不是被发现的，是被经历出来的。</em>
                 </div>
             </div>
         </section>
@@ -627,23 +620,23 @@
 
         <!-- Interests -->
         <section>
-            <div class="section-label">When I'm Not Building</div>
+            <div class="section-label">When Not Building · 不构建时</div>
             <div class="interests">
-                <span class="interest-tag">🏔️ Mountain Hiking</span>
-                <span class="interest-tag">🎾 Tennis</span>
-                <span class="interest-tag">🏋️ Gym & Yoga</span>
-                <span class="interest-tag">🍳 Cooking</span>
-                <span class="interest-tag">🎵 Music (ex-band member)</span>
-                <span class="interest-tag">🎬 Coen Brothers Fan</span>
-                <span class="interest-tag">✈️ Travel</span>
-                <span class="interest-tag">📖 Camus Reader</span>
+                <span class="interest-tag">🏔️ 山地徒步</span>
+                <span class="interest-tag">🎾 网球</span>
+                <span class="interest-tag">🏋️ 健身 & 瑜伽</span>
+                <span class="interest-tag">🍳 烹饪</span>
+                <span class="interest-tag">🎵 音乐（前乐队成员）</span>
+                <span class="interest-tag">🎬 科恩兄弟影迷</span>
+                <span class="interest-tag">✈️ 旅行</span>
+                <span class="interest-tag">📖 加缪读者</span>
             </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p class="quote">"Create a tool to make information exchange easier."</p>
-            <p>Rocky Li · 2026</p>
+            <p class="quote">「让信息更自由地流动。」</p>
+            <p>林翼 Rocky Li · 2026</p>
         </footer>
     </div>
 </body>
