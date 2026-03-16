@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食历 FreshKeeper – AI 食材管理</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'PingFang SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(160deg, #e8f5e9 0%, #f9fbe7 100%);
+            color: #2c3e50;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 20px;
+            text-align: center;
+        }
+
+        /* Lang toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            z-index: 1000;
+            display: flex;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .lang-toggle a {
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #888;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .lang-toggle a.active {
+            background: #2e7d32;
+            color: white;
+        }
+        .lang-toggle a:hover:not(.active) { color: #333; }
+
+        .logo {
+            width: 96px;
+            height: 96px;
+            border-radius: 22px;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        h1 { font-size: 3rem; font-weight: 800; color: #1b5e20; margin-bottom: 10px; }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: #555;
+            margin-bottom: 12px;
+            max-width: 520px;
+            line-height: 1.6;
+        }
+
+        .ai-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #2e7d32, #66bb6a);
+            color: white;
+            border-radius: 20px;
+            padding: 5px 16px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 36px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            max-width: 520px;
+            width: 100%;
+            margin-bottom: 44px;
+        }
+
+        .feature {
+            background: white;
+            border-radius: 18px;
+            padding: 24px 20px;
+            box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature .icon { font-size: 2rem; margin-bottom: 12px; }
+        .feature h3 { font-size: 0.95rem; font-weight: 700; color: #2e7d32; margin-bottom: 6px; }
+        .feature p { font-size: 0.82rem; color: #6c757d; line-height: 1.5; }
+
+        .cta-group { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+
+        .app-store-btn {
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+        .app-store-btn:hover { opacity: 0.85; }
+        .app-store-btn img { height: 52px; }
+
+        .meta { font-size: 0.82rem; color: #888; }
+
+        .author-link {
+            margin-top: 6px;
+            font-size: 0.88rem;
+            color: #555;
+        }
+        .author-link a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #a5d6a7;
+            transition: color 0.2s;
+        }
+        .author-link a:hover { color: #1b5e20; }
+
+        .footer { margin-top: 40px; font-size: 0.78rem; color: #bdc3c7; }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2rem; }
+            .features { max-width: 340px; gap: 12px; }
+        }
+
+        /* Language switching */
+        .zh { display: block; }
+        .en { display: none; }
+        html[lang="en"] .zh { display: none; }
+        html[lang="en"] .en { display: block; }
+        html[lang="en"] .zh-inline { display: none; }
+        html[lang="en"] .en-inline { display: inline; }
+        .en-inline { display: none; }
+        .zh-inline { display: inline; }
+    </style>
+</head>
+<body>
+
+    <nav class="lang-toggle">
+        <a href="#" onclick="setLang('zh');return false;" class="active" id="btn-zh">中文</a>
+        <a href="#" onclick="setLang('en');return false;" id="btn-en">EN</a>
+    </nav>
+
+    <img src="shili-logo.png" alt="FreshKeeper 食历" class="logo">
+    <h1>
+        <span class="zh-inline">食历</span>
+        <span class="en-inline">FreshKeeper</span>
+    </h1>
+
+    <p class="subtitle zh">你的冰箱管理小助手</p>
+    <p class="subtitle en" style="display:none;">Your smart fridge assistant.</p>
+
+    <div class="ai-badge">
+        <span class="zh-inline">✨ AI 驱动 · 免费 · 仅限 iPhone</span>
+        <span class="en-inline">✨ AI-Powered · Free · iPhone Only</span>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <div class="icon">📸</div>
+            <h3 class="zh-inline">AI 识别</h3>
+            <h3 class="en-inline" style="display:none;">AI Recognition</h3>
+            <p class="zh">拍照自动识别品名、保质期和分类，支持批量扫描，中英文标签均可。</p>
+            <p class="en" style="display:none;">Snap a photo to auto-identify product name, expiry date and category. Batch scanning supported. English & Chinese labels.</p>
+        </div>
+        <div class="feature">
+            <div class="icon">🔔</div>
+            <h3 class="zh-inline">到期提醒</h3>
+            <h3 class="en-inline" style="display:none;">Expiry Alerts</h3>
+            <p class="zh">日历视图一览所有临期食材，自定义 1–7 天提醒，早晚推送不遗漏。</p>
+            <p class="en" style="display:none;">Calendar view shows all upcoming expirations. Set 1–7 day alerts with morning & evening notifications.</p>
+        </div>
+        <div class="feature">
+            <div class="icon">👨‍🍳</div>
+            <h3 class="zh-inline">AI 食谱</h3>
+            <h3 class="en-inline" style="display:none;">AI Recipes</h3>
+            <p class="zh">根据冰箱库存推荐食谱，优先消耗临期食材，附详细步骤和烹饪时间。</p>
+            <p class="en" style="display:none;">Personalized recipes based on your fridge. Prioritises expiring items, with cooking steps, difficulty and time.</p>
+        </div>
+        <div class="feature">
+            <div class="icon">📊</div>
+            <h3 class="zh-inline">浪费统计</h3>
+            <h3 class="en-inline" style="display:none;">Waste Tracking</h3>
+            <p class="zh">按蔬菜、肉类、乳制品等分类，追踪周、月、年的消耗与浪费趋势。</p>
+            <p class="en" style="display:none;">Track consumption vs. waste by category — vegetables, meat, dairy and more. Weekly, monthly, yearly trends.</p>
+        </div>
+    </div>
+
+    <div class="cta-group">
+        <a href="https://apps.apple.com/us/app/freshkeeper/id6758946521" class="app-store-btn" target="_blank">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+        <p class="meta">
+            <span class="zh-inline">免费 · iPhone · iOS 16+ · 不收集数据 · © 2026 Rocky.L</span>
+            <span class="en-inline">Free · iPhone · iOS 16+ · No data collected · © 2026 Rocky.L</span>
+        </p>
+        <p class="author-link">
+            <span class="zh-inline">作者：</span>
+            <span class="en-inline">Made by </span>
+            <a href="https://player1.bot" target="_blank">Rocky Li →</a>
+        </p>
+    </div>
+
+    <div class="footer">shili365.com · 食历 FreshKeeper</div>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            document.querySelectorAll('.zh').forEach(el => el.style.display = lang === 'zh' ? 'block' : 'none');
+            document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+            document.querySelectorAll('.zh-inline').forEach(el => el.style.display = lang === 'zh' ? 'inline' : 'none');
+            document.querySelectorAll('.en-inline').forEach(el => el.style.display = lang === 'en' ? 'inline' : 'none');
+
+            // h3 special handling
+            document.querySelectorAll('h3.zh-inline').forEach(el => el.style.display = lang === 'zh' ? 'block' : 'none');
+            document.querySelectorAll('h3.en-inline').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+        }
+        // default zh
+        setLang('zh');
+    </script>
+</body>
+</html>

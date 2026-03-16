@@ -437,12 +437,31 @@
 
         /* Responsive */
         @media (max-width: 640px) {
-            h1 { font-size: 36px; }
-            .hero { padding: 60px 0 40px; }
+            h1 { font-size: 32px; }
+            .hero { padding: 50px 0 32px; }
+            .hero-sub { font-size: 15px; line-height: 1.7; }
+            .hero-links { gap: 8px; }
+            .hero-links a { padding: 7px 12px; font-size: 13px; }
             .projects-grid, .gaming-stats { grid-template-columns: 1fr; }
             .timeline-item {
                 grid-template-columns: 1fr;
                 gap: 4px;
+            }
+            section { padding: 36px 0; }
+            .about-text { font-size: 15px; line-height: 1.8; }
+            .about-text br { display: none; }
+            .belief { padding: 16px 18px; font-size: 14px; }
+            .lang-toggle { top: 12px; right: 16px; }
+            .gaming-card .rank { font-size: 28px; }
+        }
+
+        /* iPhone safe area */
+        @supports (padding: env(safe-area-inset-top)) {
+            body {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
             }
         }
 
