@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林翼 — 构建者、探索者、思考者</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0b;
+            --surface: #141416;
+            --surface-2: #1c1c20;
+            --border: #2a2a2e;
+            --text: #e8e8ec;
+            --text-muted: #8b8b95;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --green: #22c55e;
+            --orange: #f59e0b;
+            --red: #ef4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Lang toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            z-index: 1000;
+            display: flex;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .lang-toggle a {
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .lang-toggle a.active {
+            background: var(--accent);
+            color: white;
+        }
+        .lang-toggle a:hover:not(.active) {
+            color: var(--text);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 60px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        h1 span {
+            background: linear-gradient(135deg, var(--accent), #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            color: var(--text-muted);
+            max-width: 500px;
+            line-height: 1.8;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .hero-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5558e6;
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--accent);
+            background: var(--accent-glow);
+        }
+
+        /* Sections */
+        section {
+            padding: 48px 0;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0;
+        }
+
+        /* About */
+        .about-text {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .about-text strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .timeline-date {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+            padding-top: 2px;
+        }
+
+        .timeline-content h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-content .company {
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.25s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
+        }
+
+        .project-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .project-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            background: var(--surface-2);
+            border-radius: 4px;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        /* Gaming */
+        .gaming-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .gaming-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gaming-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--orange));
+        }
+
+        .gaming-card .game-name {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .gaming-card .rank {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--orange), var(--red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .gaming-card .rank-detail {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        /* Beliefs */
+        .beliefs {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .belief {
+            padding: 20px 24px;
+            background: var(--surface);
+            border-left: 2px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .belief em {
+            color: var(--text);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* Interests */
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .interest-tag {
+            padding: 8px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .interest-tag:hover {
+            border-color: var(--accent);
+            color: var(--text);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        footer .quote {
+            font-size: 15px;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            h1 { font-size: 36px; }
+            .hero { padding: 60px 0 40px; }
+            .projects-grid, .gaming-stats { grid-template-columns: 1fr; }
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-up:nth-child(2) { animation-delay: 0.1s; }
+        .fade-up:nth-child(3) { animation-delay: 0.2s; }
+        .fade-up:nth-child(4) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="lang-toggle">
+        <a href="rocky-homepage.html">EN</a>
+        <a href="rocky-homepage-cn.html" class="active">中文</a>
+    </div>
+
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="fade-up">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    正在寻找新机会
+                </div>
+            </div>
+            <h1 class="fade-up">你好，我是<span>林翼</span></h1>
+            <p class="hero-sub fade-up">
+                5 年华为云，从亚太到非洲，做软件生态与市场拓展。
+                现在专注于 AI 产品开发，用大模型解决真实问题。
+            </p>
+            <div class="hero-links fade-up">
+                <a href="https://www.linkedin.com/in/linyi-li-899200171/" class="btn-primary" target="_blank">LinkedIn</a>
+                <a href="mailto:rockyl@player1.bot" class="btn-ghost">✉ rockyl@player1.bot</a>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_f3eaeccc56af" class="btn-ghost" target="_blank">公众号：林翼的学习宇宙</a>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- About -->
+        <section>
+            <div class="section-label">About · 关于我</div>
+            <div class="about-text">
+                <p>
+                    在<strong>华为云</strong>工作 5 年，负责软件生态的商务拓展与落地——覆盖新加坡、雅加达、拉各斯等市场。
+                    这段经历让我深入理解了平台型业务的运作：如何让第三方在你的生态里成功。
+                </p>
+                <br>
+                <p>
+                    离开华为后，转向 <strong>AI 产品开发</strong>。当前关注大模型应用层——用 AI 构建解决具体问题的工具和产品。
+                    持续思考的一个命题：<strong>信息的流动方式如何塑造人的决策与行为</strong>。
+                </p>
+                <br>
+                <p>
+                    <strong>中南财经政法大学</strong>经济统计学（本科） · <strong>利兹大学</strong>数据科学与分析（硕士）。现居英国。
+                </p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Experience -->
+        <section>
+            <div class="section-label">Experience · 经历</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 — 2025</div>
+                    <div class="timeline-content">
+                        <h3>云生态经理</h3>
+                        <div class="company">华为云 · 雅加达，印尼</div>
+                        <p>负责印尼本地软件生态建设，推动 ISV 云化迁移与联合市场推广。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 — 2024</div>
+                    <div class="timeline-content">
+                        <h3>伙伴发展经理</h3>
+                        <div class="company">华为云 · 亚太 / 非洲 / 拉美</div>
+                        <p>跨三个大区的软件生态拓展，覆盖商务开发、方案适配到落地交付。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2018 — 2019</div>
+                    <div class="timeline-content">
+                        <h3>数据科学与分析 硕士</h3>
+                        <div class="company">利兹大学 · University of Leeds</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2014 — 2018</div>
+                    <div class="timeline-content">
+                        <h3>经济统计学 本科</h3>
+                        <div class="company">中南财经政法大学</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Projects -->
+        <section>
+            <div class="section-label">Projects · 项目</div>
+            <div class="projects-grid">
+                <a href="https://shili365.com" target="_blank" class="project-card">
+                    <div class="project-icon"><img src="shili-logo.png" alt="食历" style="width:56px;height:56px;border-radius:14px;object-fit:cover;"></div>
+                    <h3>Freshkeeper 食历</h3>
+                    <p>AI 厨房助手——拍照识别食材、追踪保质期、减少食物浪费。</p>
+                    <span class="project-tag">移动 App · AI</span>
+                </a>
+                <a href="https://chromewebstore.google.com/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E4%B8%93%E6%B3%A8/gkbdjmhnoojceeebecelomifpknihgje" target="_blank" class="project-card">
+                    <div class="project-icon"><img src="interlock-logo.png" alt="Interlock" style="width:56px;height:56px;border-radius:14px;object-fit:cover;"></div>
+                    <h3>Interlock 沉浸式专注</h3>
+                    <p>屏蔽网页干扰、帮助用户找回深度专注的 Chrome 扩展。</p>
+                    <span class="project-tag">Chrome 扩展</span>
+                </a>
+                <a href="https://www.youtube.com/@Rockyislearning" target="_blank" class="project-card">
+                    <div class="project-icon">🏔️</div>
+                    <h3>北极人物志</h3>
+                    <p>北极邮轮上的人物采访纪录片，记录极地旅途中遇到的人与故事。</p>
+                    <span class="project-tag">纪录片 · YouTube</span>
+                </a>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_f3eaeccc56af" target="_blank" class="project-card">
+                    <div class="project-icon">📡</div>
+                    <h3>硅谷大佬们这周说了什么</h3>
+                    <p>每周追踪 34 位硅谷 AI 创始人在 X 上的最新观点，AI 采集、人工筛选。</p>
+                    <span class="project-tag">微信公众号 · 每周更新</span>
+                </a>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Gaming -->
+        <section>
+            <div class="section-label">Past Life · 上一段人生：职业电竞</div>
+            <div class="gaming-stats">
+                <div class="gaming-card">
+                    <div class="game-name">炉石传说</div>
+                    <div class="rank">全国第一</div>
+                    <div class="rank-detail">国服天梯</div>
+                </div>
+                <div class="gaming-card">
+                    <div class="game-name">Dota 2</div>
+                    <div class="rank">前 100</div>
+                    <div class="rank-detail">国服天梯 · 曾入选 FTD 战队青训</div>
+                </div>
+            </div>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 16px; line-height: 1.7;">
+                在两款高竞技强度的游戏中都达到了业余顶尖水平。
+                竞技留下的习惯——复盘、拆解、持续优化——后来成了做产品的底层方法论。
+            </p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Beliefs -->
+        <section>
+            <div class="section-label">What I Believe · 我相信</div>
+            <div class="beliefs">
+                <div class="belief">
+                    <em>好的工具改变人的行为。</em>技术的价值不在于复杂，在于让普通人获得原本没有的能力。
+                </div>
+                <div class="belief">
+                    <em>「不做什么」比「做什么」更容易坚持。</em>明确的边界带来真正的专注。
+                </div>
+                <div class="belief">
+                    <em>信息的流动方式决定世界的运转方式。</em>从云生态到大模型，我一直在思考同一个问题：知识如何更高效地在人与人之间传递？
+                </div>
+                <div class="belief">
+                    <em>意义不是被发现的，是被经历出来的。</em>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Interests -->
+        <section>
+            <div class="section-label">When Not Building · 不构建时</div>
+            <div class="interests">
+                <span class="interest-tag">🏔️ 山地徒步</span>
+                <span class="interest-tag">🎾 网球</span>
+                <span class="interest-tag">🏋️ 健身 & 瑜伽</span>
+                <span class="interest-tag">🍳 烹饪</span>
+                <span class="interest-tag">🎵 音乐（前乐队成员）</span>
+                <span class="interest-tag">🎬 科恩兄弟影迷</span>
+                <span class="interest-tag">✈️ 旅行</span>
+                <span class="interest-tag">📖 加缪读者</span>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p class="quote">「让信息更自由地流动。」</p>
+            <p>林翼 Rocky Li · 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
