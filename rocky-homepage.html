@@ -3,17 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rocky Li — Welcome to my homepage</title>
-    <meta name="description" content="Rocky Li — ex-Huawei cloud ecosystem builder, now indie AI developer. Building AI-native products and exploring agent infrastructure.">
-    <meta property="og:title" content="Rocky Li — Builder, Explorer, Thinker">
-    <meta property="og:description" content="Ex-Huawei, now indie AI builder. Focused on AI agents and productivity tools.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://player1.bot">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@Rocky1eee">
-    <meta name="twitter:title" content="Rocky Li — Builder, Explorer, Thinker">
-    <meta name="twitter:description" content="Ex-Huawei, now indie AI builder. Focused on AI agents and productivity tools.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    <title>Rocky Li — Builder, Explorer, Thinker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -41,7 +31,14 @@
             overflow-x: hidden;
         }
 
-
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
 
         .container {
             max-width: 720px;
@@ -412,34 +409,6 @@
             }
         }
 
-        /* Lang toggle */
-        .lang-toggle {
-            position: fixed;
-            top: 20px;
-            right: 24px;
-            z-index: 1000;
-            display: flex;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .lang-toggle a {
-            padding: 6px 14px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .lang-toggle a.active {
-            background: var(--accent);
-            color: white;
-        }
-        .lang-toggle a:hover:not(.active) {
-            color: var(--text);
-        }
-
         /* Animations */
         .fade-up {
             opacity: 0;
@@ -457,28 +426,24 @@
     </style>
 </head>
 <body>
-    <nav class="lang-toggle" aria-label="Language switcher">
-        <a href="rocky-homepage.html" class="active" aria-current="page">EN</a>
-        <a href="rocky-homepage-cn.html">中文</a>
-    </nav>
-    <main class="container">
+    <div class="container">
         <!-- Hero -->
         <section class="hero">
             <div class="fade-up">
                 <div class="hero-badge">
                     <span class="dot"></span>
-                    Building in public
+                    Open to opportunities
                 </div>
             </div>
             <h1 class="fade-up">Hi, I'm <span>Rocky</span></h1>
             <p class="hero-sub fade-up">
-                Ex-cloud, now indie builder.<br>
-                Building AI-native products — so that ordinary people can use AI that actually works.
+                From competitive gaming to cloud computing and network hardware. 
+                Based in the UK, exploring Agentic AI with a gamer's mindset — building things that matter.
             </p>
             <div class="hero-links fade-up">
                 <a href="https://www.linkedin.com/in/linyi-li-899200171/" class="btn-primary" target="_blank">LinkedIn</a>
+                <a href="https://www.youtube.com/@Rockyislearning" class="btn-ghost" target="_blank">▶ YouTube</a>
                 <a href="mailto:rockyl@player1.bot" class="btn-ghost">✉ rockyl@player1.bot</a>
-                <a href="#" class="btn-ghost" onclick="navigator.clipboard.writeText('林翼的学习宇宙');this.textContent='✓ Copied!';setTimeout(()=>this.textContent='📱 WeChat: 林翼的学习宇宙',2000);return false;">📱 WeChat: 林翼的学习宇宙</a>
             </div>
         </section>
 
@@ -489,16 +454,22 @@
             <div class="section-label">About</div>
             <div class="about-text">
                 <p>
-                    5 years at <strong>Huawei</strong> — from telecom networks to cloud ecosystems, from Shenzhen to Singapore to Jakarta.
-                    One thing became clear: <strong>the value of a platform lies in making everyone in its ecosystem succeed.</strong>
+                    I spent 5 years at <strong>Huawei Cloud</strong> helping software partners succeed commercially — 
+                    building ecosystems from Singapore to Jakarta. I've seen how platforms work from the inside: 
+                    cloud is the OS, partners are the apps.
                 </p>
                 <br>
                 <p>
-                    In 2025, I started building independently.
-                    Freshkeeper, Interlock, multi-agent systems — behind all of it is the same question:
-                    <strong>how does the way information flows truly shape human behaviour — and now, agent behaviour?</strong>
+                    Now I'm deep in the <strong>AI vibe coding</strong> wave — building tools, experimenting with LLMs, 
+                    and figuring out how AI changes the way we create and communicate. 
+                    I believe <strong>information transfer</strong> is the deepest lever for change, 
+                    and LLMs are rewriting the rules.
                 </p>
-                <div class="about-quote" style="margin-top:24px;padding:16px 20px;border-left:2px solid var(--accent);font-size:15px;font-style:italic;color:var(--text-muted);opacity:0.85;">"Make information flow more freely."</div>
+                <br>
+                <p>
+                    Background: <strong>Economic Statistics</strong> (ZUEL) → <strong>Data Science & Analytics</strong> (University of Leeds).
+                    Based in the UK.
+                </p>
             </div>
         </section>
 
@@ -509,35 +480,19 @@
             <div class="section-label">Experience</div>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2025 — Present</div>
-                    <div class="timeline-content">
-                        <h3>Indie AI Builder</h3>
-                        <div class="company">Independent</div>
-                        <p>Building AI-native products — iOS apps, browser extensions, and agent infrastructure. Exploring the limits of multi-agent collaboration.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
                     <div class="timeline-date">2024 — 2025</div>
                     <div class="timeline-content">
-                        <h3>Ecosystem Development Manager</h3>
+                        <h3>Cloud Ecosystem Manager</h3>
                         <div class="company">Huawei Cloud · Jakarta, Indonesia</div>
-                        <p>End-to-end local ecosystem — working with major SIs, IT service providers, and software companies to help Chinese enterprises land in Indonesia.</p>
+                        <p>Local ecosystem development for Huawei Cloud in Indonesia. Partner enablement, go-to-market strategy.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2022 — 2024</div>
+                    <div class="timeline-date">2020 — 2024</div>
                     <div class="timeline-content">
-                        <h3>Commercialization & Development Manager</h3>
-                        <div class="company">Huawei Cloud · Singapore</div>
-                        <p>Led Marketplace overseas commercialization and overseas software partner development. Supported software ecosystem onboarding for strategic projects across APAC, LATAM, and Africa.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2020 — 2022</div>
-                    <div class="timeline-content">
-                        <h3>Solution Engineer</h3>
-                        <div class="company">Huawei Technologies · China</div>
-                        <p>Pre-sales for telecom clients, responsible for Huawei's network product line.</p>
+                        <h3>Partner Development Manager</h3>
+                        <div class="company">Huawei Cloud · Asia-Pacific, Africa, Latin America</div>
+                        <p>Software ecosystem across APAC, Africa, and LATAM. Helped partners achieve commercial success on Huawei Cloud.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -545,13 +500,7 @@
                     <div class="timeline-content">
                         <h3>MSc Data Science & Analytics</h3>
                         <div class="company">University of Leeds</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2013 — 2017</div>
-                    <div class="timeline-content">
-                        <h3>BSc Economic Statistics</h3>
-                        <div class="company">Zhongnan University of Economics and Law</div>
+                        <p>Statistical modelling, machine learning, applied data science.</p>
                     </div>
                 </div>
             </div>
@@ -562,35 +511,24 @@
         <!-- Projects -->
         <section>
             <div class="section-label">Projects</div>
-
             <div class="projects-grid">
-                <a href="https://shili365.com" target="_blank" class="project-card">
-                    <div class="project-icon"><img src="shili-logo.png" alt="食历" loading="lazy" style="width:56px;height:56px;border-radius:14px;object-fit:cover;"></div>
-                    <h3>Freshkeeper 食历</h3>
-                    <p>AI kitchen assistant — snap a photo to identify ingredients, track expiry dates, and reduce food waste.</p>
-                    <span class="project-tag">iOS · AI</span>
-                    <span class="project-status" style="display:block;font-size:11px;color:#22c55e;margin-top:8px;font-weight:500;">✦ Live on App Store</span>
-                </a>
-                <a href="https://chromewebstore.google.com/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E4%B8%93%E6%B3%A8/gkbdjmhnoojceeebecelomifpknihgje" target="_blank" class="project-card">
-                    <div class="project-icon"><img src="interlock-logo.png" alt="Interlock" loading="lazy" style="width:56px;height:56px;border-radius:14px;object-fit:cover;"></div>
-                    <h3>Interlock 沉浸式专注</h3>
-                    <p>Chrome extension that blocks digital distractions and helps you stay in deep focus.</p>
+                <div class="project-card">
+                    <div class="project-icon">🍎</div>
+                    <h3>FreshKeeper 食历</h3>
+                    <p>AI-powered kitchen inventory app. Snap a photo and let AI identify your ingredients, track expiry dates, reduce food waste.</p>
+                    <span class="project-tag">Mobile App · AI</span>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🧊</div>
+                    <h3>Interlock</h3>
+                    <p>Chrome extension to reduce digital distraction and reclaim focus.</p>
                     <span class="project-tag">Chrome Extension</span>
-                    <span class="project-status" style="display:block;font-size:11px;color:#22c55e;margin-top:8px;font-weight:500;">✦ Live on Chrome Web Store</span>
-                </a>
+                </div>
                 <a href="https://www.youtube.com/@Rockyislearning" target="_blank" class="project-card">
                     <div class="project-icon">🏔️</div>
                     <h3>Voices from the Arctic</h3>
-                    <p>Documentary interviews filmed on an Arctic cruise — the people and stories you meet at the edge of the world.</p>
+                    <p>Documentary interviews from an Arctic cruise expedition. Stories from the edge of the world.</p>
                     <span class="project-tag">Documentary · YouTube</span>
-                    <span class="project-status" style="display:block;font-size:11px;color:#22c55e;margin-top:8px;font-weight:500;">✦ Ep.1 out · More coming</span>
-                </a>
-                <a href="#" class="project-card" onclick="navigator.clipboard.writeText('林翼的学习宇宙');alert('WeChat account name copied! Search it in WeChat to follow.');return false;">
-                    <div class="project-icon">📡</div>
-                    <h3>Silicon Valley Weekly</h3>
-                    <p>Weekly digest tracking what 34 Silicon Valley AI founders are saying on X. AI-assisted collection, human-curated editorial. First-hand signals, so you can form your own view.</p>
-                    <span class="project-tag">WeChat Newsletter · Weekly</span>
-                    <span class="project-status" style="display:block;font-size:11px;color:#22c55e;margin-top:8px;font-weight:500;">✦ Updated weekly</span>
                 </a>
             </div>
         </section>
@@ -604,16 +542,17 @@
                 <div class="gaming-card">
                     <div class="game-name">Hearthstone 炉石传说</div>
                     <div class="rank">Rank #1</div>
-                    <div class="rank-detail">China Server · November 2018</div>
+                    <div class="rank-detail">China Server</div>
                 </div>
                 <div class="gaming-card">
                     <div class="game-name">Dota 2</div>
                     <div class="rank">Top 100</div>
-                    <div class="rank-detail">China Server · FTD team tryouts, 2019</div>
+                    <div class="rank-detail">China Server · Tried out for FTD Academy</div>
                 </div>
             </div>
             <p style="font-size: 14px; color: var(--text-muted); margin-top: 16px; line-height: 1.6;">
-                What high-intensity competition taught me wasn't mechanics — it was <strong style="color: var(--text); font-weight: 500;">how to make winning decisions under extreme uncertainty</strong>. That became the foundation of how I build products.
+                Competed at the highest amateur level in two of gaming's most demanding titles. 
+                Discovered that talent without obsession only gets you so far — then pivoted that intensity into building things.
             </p>
         </section>
 
@@ -624,16 +563,16 @@
             <div class="section-label">What I Believe</div>
             <div class="beliefs">
                 <div class="belief">
-                    <em>Good tools change how people behave.</em> Technology matters when it gives ordinary people capabilities they didn't have before.
+                    <em>Build tools that change behavior.</em> Technology matters when it makes ordinary people stronger and freer.
                 </div>
                 <div class="belief">
-                    <em>"What not to do" is easier to stick to than "what to do."</em> Clear boundaries lead to real focus.
+                    <em>"What not to do" is easier to stick to than "what to do."</em> Constraints create clarity.
                 </div>
                 <div class="belief">
-                    <em>How information flows determines how the world works.</em> From cloud ecosystems to LLMs, I keep thinking about the same question: how does knowledge travel from one person to another?
+                    <em>Information transfer is everything.</em> From cloud ecosystems to LLMs — I keep coming back to the same obsession: how do we move knowledge between minds?
                 </div>
                 <div class="belief">
-                    <em>Meaning isn't found — it's lived.</em>
+                    <em>The meaning of life is to search for meaning.</em> So go experience things.
                 </div>
             </div>
         </section>
@@ -647,6 +586,7 @@
                 <span class="interest-tag">🏔️ Mountain Hiking</span>
                 <span class="interest-tag">🎾 Tennis</span>
                 <span class="interest-tag">🏋️ Gym & Yoga</span>
+                <span class="interest-tag">🍳 Cooking</span>
                 <span class="interest-tag">🎵 Music (ex-band member)</span>
                 <span class="interest-tag">🎬 Coen Brothers Fan</span>
                 <span class="interest-tag">✈️ Travel</span>
@@ -654,11 +594,11 @@
             </div>
         </section>
 
-    </main>
-
         <!-- Footer -->
-        <footer class="container">
-            <p>Rocky Li · 2026 · player1.bot</p>
+        <footer>
+            <p class="quote">"Create a tool to make information exchange easier."</p>
+            <p>Rocky Li · 2026</p>
         </footer>
+    </div>
 </body>
 </html>
