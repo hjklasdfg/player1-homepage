@@ -3,686 +3,587 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林翼 — 欢迎访问我的主页</title>
-    <meta name="description" content="林翼 — 从电竞到云计算与网络硬件，现居英国。用打游戏的思维方式，探索 Agentic AI。">
-    <meta property="og:title" content="林翼 — 构建者、探索者、思考者">
-    <meta property="og:description" content="从电竞到云计算与网络硬件，现居英国。探索 Agentic AI 中。">
+    <title>林翼的主页</title>
+    <meta name="description" content="林翼 — 从电竞到云计算，现居英国。用 Vibe Coding 构建 AI 原生产品。">
+    <meta property="og:title" content="林翼 Rocky Li — 构建者、探索者">
+    <meta property="og:description" content="从电竞到云计算，现居英国。探索 Agentic AI 中。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://player1.bot/rocky-homepage-cn.html">
+    <meta property="og:url" content="https://player1.bot">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@Rocky1eee">
-    <meta name="twitter:title" content="林翼 — 构建者、探索者、思考者">
-    <meta name="twitter:description" content="从电竞到云计算与网络硬件，现居英国。探索 Agentic AI 中。">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0a0b;
-            --surface: #141416;
-            --surface-2: #1c1c20;
-            --border: #2a2a2e;
-            --text: #e8e8ec;
-            --text-muted: #8b8b95;
-            --accent: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.15);
-            --green: #22c55e;
-            --orange: #f59e0b;
-            --red: #ef4444;
+            --bg: #FCFCFC;
+            --surface: #FFFFFF;
+            --surface-alt: #F6F6F6;
+            --border: rgba(0,0,0,0.06);
+            --border-strong: rgba(0,0,0,0.1);
+            --text: #1A1A1A;
+            --text-secondary: #666;
+            --text-muted: #999;
+            --accent: #3939FF;
+            --orange: #FF5B22;
+            --yellow: #F2BB05;
+            --purple: #DBB8FF;
+            --teal: #0EA5A0;
+            --radius: 16px;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
+            --font: 'Inter', 'Noto Sans SC', -apple-system, system-ui, sans-serif;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        ::selection { background: var(--accent); color: white; }
 
-        body {
-            font-family: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 40px; transition: all 0.3s; }
+        .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+        .nav.scrolled { background: rgba(252,252,252,0.85); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--border); }
+        .nav-logo { font-size: 17px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-links { display: flex; align-items: center; gap: 2px; }
+        .nav-links a { padding: 6px 12px; font-size: 13px; font-weight: 500; color: var(--text-secondary); text-decoration: none; border-radius: 6px; transition: all 0.2s; }
+        .nav-links a:hover { color: var(--text); background: var(--surface-alt); }
+        .nav-links .lang-btn { margin-left: 6px; border: 1px solid var(--border-strong); font-size: 12px; font-weight: 600; border-radius: 100px; padding: 4px 12px; }
+        .nav-links .lang-btn:hover { background: var(--text); color: white; border-color: var(--text); }
 
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+        .section { padding: 64px 0; }
+        .section-header { margin-bottom: 32px; }
+        .section-tag { font-size: 12px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.5px; margin-bottom: 8px; display: block; }
+        .section-title { font-size: clamp(24px, 3vw, 32px); font-weight: 800; letter-spacing: -1px; line-height: 1.15; }
 
-        /* Lang toggle */
-        .lang-toggle {
-            position: fixed;
-            top: 20px;
-            right: 24px;
-            z-index: 1000;
-            display: flex;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .lang-toggle a {
-            padding: 6px 14px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .lang-toggle a.active {
-            background: var(--accent);
-            color: white;
-        }
-        .lang-toggle a:hover:not(.active) {
-            color: var(--text);
-        }
+        .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 100px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; font-family: var(--font); }
+        .btn-primary { background: var(--text); color: white; }
+        .btn-primary:hover { opacity: 0.85; }
+        .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
+        .btn-secondary:hover { background: var(--surface-alt); border-color: var(--text); }
 
-        /* Hero */
-        .hero {
-            padding: 100px 0 60px;
-            position: relative;
-        }
+        /* HERO */
+        .hero { padding: 100px 0 48px; position: relative; overflow: hidden; }
+        .hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; z-index: 1; }
+        .hero-content { max-width: 560px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; background: var(--surface-alt); border-radius: 100px; font-size: 12px; font-weight: 500; color: var(--text-secondary); margin-bottom: 24px; }
+        .hero-badge .dot { width: 6px; height: 6px; background: #22C55E; border-radius: 50%; animation: pulse 2.5s ease-in-out infinite; }
+        @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+        .hero h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 900; line-height: 1.0; letter-spacing: -2.5px; margin-bottom: 20px; }
+        .hero h1 .name { display: block; background: linear-gradient(135deg, var(--accent), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-desc { font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; }
+        .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
-        .hero::before {
-            content: '';
+        /* Flow canvas */
+        .hero-flow {
             position: absolute;
-            top: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            top: 80px;
+            right: 0;
+            width: 55%;
+            height: calc(100% - 80px);
             pointer-events: none;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
+        /* ABOUT */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .about-card { background: var(--surface); border-radius: var(--radius); padding: 28px; border: 1px solid var(--border); transition: all 0.3s; position: relative; overflow: hidden; }
+        .about-card:hover { box-shadow: var(--shadow-md); }
+        .about-card.full-width { grid-column: 1 / -1; }
+        .about-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+        .about-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+        .about-card p strong { color: var(--text); font-weight: 600; }
+        .about-quote-card { text-align: center; padding: 32px; }
+        .about-quote-card p { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; line-height: 1.5; }
+
+        /* PROJECTS */
+        .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: all 0.3s; position: relative; overflow: hidden; }
+        .project-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: transparent; }
+        .project-logo { width: 44px; height: 44px; border-radius: 11px; object-fit: cover; margin-bottom: 14px; }
+        .project-emoji { width: 44px; height: 44px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; background: var(--surface-alt); }
+        .project-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; }
+        .project-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+        .project-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+        .project-tag { font-size: 11px; font-weight: 600; color: var(--text-muted); }
+        .project-status { font-size: 11px; font-weight: 600; color: #22C55E; display: flex; align-items: center; gap: 4px; }
+        .project-status::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #22C55E; }
+
+        /* EXPERIENCE — horizontal timeline */
+        .exp-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .timeline { display: grid; grid-template-columns: repeat(6, 1fr); position: relative; padding-top: 36px; }
+        .timeline::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--text); }
+        .timeline-item { padding: 0 8px; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; top: -40px; left: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--text); }
+        .timeline-date { font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
+        .timeline-body h3 { font-size: 13px; font-weight: 700; margin-bottom: 2px; line-height: 1.3; }
+        .timeline-body .company { font-size: 12px; color: var(--text-secondary); font-weight: 500; margin-bottom: 4px; }
+        .timeline-body p { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+
+        /* GAMING */
+        .gaming-row { display: flex; gap: 14px; align-items: stretch; }
+        .gaming-card { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: all 0.3s; position: relative; overflow: hidden; }
+        .gaming-card:hover { box-shadow: var(--shadow-md); }
+        .gaming-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 8px; }
+        .gaming-rank { font-size: 32px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 4px; }
+        .gaming-card:first-child .gaming-rank { color: var(--orange); }
+        .gaming-card:nth-child(2) .gaming-rank { color: var(--accent); }
+        .gaming-detail { font-size: 12px; color: var(--text-muted); }
+        .gaming-insight { flex: 1.5; display: flex; align-items: center; padding: 24px 32px; background: var(--text); color: white; border-radius: var(--radius); font-size: 15px; line-height: 1.7; font-weight: 500; }
+
+        /* BELIEFS */
+        .beliefs-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden; }
+        .belief-item { display: grid; grid-template-columns: 1fr 1.5fr; gap: 32px; padding: 24px 32px; background: var(--surface); transition: background 0.2s; }
+        .belief-item:hover { background: var(--surface-alt); }
+        .belief-title { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
+        .belief-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; align-self: center; }
+
+        /* INTERESTS */
+        .interests-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+        .interest-pill { padding: 8px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 100px; font-size: 13px; font-weight: 500; color: var(--text-secondary); transition: all 0.2s; cursor: default; }
+        .interest-pill:hover { border-color: var(--text); color: var(--text); }
+
+        /* CONTACT */
+        .contact-section { text-align: center; padding: 64px 0; }
+        .contact-title { font-size: clamp(28px, 4vw, 40px); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 10px; }
+        .contact-desc { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .contact-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+        footer { padding: 28px 40px; text-align: center; border-top: 1px solid var(--border); }
+        footer p { font-size: 12px; color: var(--text-muted); }
+
+        /* DIVIDER */
+        .divider { height: 1px; background: var(--border); margin: 0; }
+
+        /* ANIMATIONS — simple fade-up on scroll */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-d1 { transition-delay: 0.06s; }
+        .reveal-d2 { transition-delay: 0.12s; }
+        .reveal-d3 { transition-delay: 0.18s; }
+        .reveal-d4 { transition-delay: 0.24s; }
+
+        /* Hero entrance */
+        .hero-content > * { opacity: 0; animation: fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) both; }
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+        @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+
+
+        /* Name gradient shimmer */
+        .hero h1 .name {
+            background-size: 200% 100%;
+            animation: shimmer 4s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
         }
 
-        .hero-badge .dot {
-            width: 6px;
-            height: 6px;
-            background: var(--green);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
+        /* Gaming rank pulse glow */
+        .gaming-rank { animation: rankGlow 3s ease-in-out infinite; }
+        .gaming-card:first-child .gaming-rank { --glow-color: var(--orange); }
+        .gaming-card:nth-child(2) .gaming-rank { --glow-color: var(--accent); }
+        @keyframes rankGlow {
+            0%, 100% { text-shadow: none; }
+            50% { text-shadow: 0 0 20px color-mix(in srgb, var(--glow-color, var(--orange)) 25%, transparent); }
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
+
+        /* Status dot breathe */
+        .project-status::before { animation: statusBreathe 2s ease-in-out infinite; }
+        @keyframes statusBreathe {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(34,197,94,0); }
         }
 
-        h1 {
-            font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            line-height: 1.1;
-            margin-bottom: 16px;
-        }
+        /* Card glow */
+        .card-glow { position: absolute; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(57,57,255,0.05) 0%, transparent 70%); pointer-events: none; transform: translate(-50%,-50%); opacity: 0; transition: opacity 0.3s; }
+        .project-card:hover .card-glow, .about-card:hover .card-glow { opacity: 1; }
 
-        h1 span {
-            background: linear-gradient(135deg, var(--accent), #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav { padding: 0 20px; }
+            .nav-links a:not(.lang-btn) { display: none; }
+            .container { padding: 0 20px; }
+            .section { padding: 48px 0; }
+            .hero { padding: 80px 0 32px; }
+            .hero-inner { flex-direction: column; align-items: flex-start; }
+            .hero-flow { display: none; }
+            .hero h1 { letter-spacing: -1.5px; }
+            .about-grid, .projects-grid { grid-template-columns: 1fr; }
+            .timeline { grid-template-columns: repeat(3, 1fr); row-gap: 24px; }
+            .gaming-row { flex-direction: column; }
+            .belief-item { grid-template-columns: 1fr; gap: 6px; padding: 20px; }
         }
-
-        .hero-sub {
-            font-size: 17px;
-            color: var(--text-muted);
-            max-width: 500px;
-            line-height: 1.8;
+        @media (max-width: 480px) {
+            .hero-actions { flex-direction: column; }
+            .hero-actions .btn { justify-content: center; }
+            .contact-links { flex-direction: column; align-items: center; }
+            .timeline { grid-template-columns: repeat(2, 1fr); }
         }
-
-        .hero-links {
-            display: flex;
-            gap: 12px;
-            margin-top: 28px;
-            flex-wrap: wrap;
-        }
-
-        .hero-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #5558e6;
-            transform: translateY(-1px);
-        }
-
-        .btn-ghost {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text);
-        }
-
-        .btn-ghost:hover {
-            border-color: var(--accent);
-            background: var(--accent-glow);
-        }
-
-        /* Sections */
-        section {
-            padding: 48px 0;
-        }
-
-        .section-label {
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            margin-bottom: 16px;
-        }
-
-        .divider {
-            height: 1px;
-            background: var(--border);
-            margin: 0;
-        }
-
-        /* About */
-        .about-text {
-            color: var(--text-muted);
-            font-size: 16px;
-            line-height: 1.9;
-        }
-
-        .about-text strong {
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        .about-quote {
-            margin-top: 24px;
-            padding: 16px 20px;
-            border-left: 2px solid var(--accent);
-            font-size: 15px;
-            font-style: italic;
-            color: var(--text-muted);
-            opacity: 0.85;
-        }
-
-        /* Timeline */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 20px;
-            align-items: start;
-        }
-
-        .timeline-date {
-            font-size: 13px;
-            color: var(--text-muted);
-            font-weight: 500;
-            padding-top: 2px;
-        }
-
-        .timeline-content h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .timeline-content .company {
-            font-size: 14px;
-            color: var(--accent);
-            margin-bottom: 6px;
-        }
-
-        .timeline-content p {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .project-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            transition: all 0.25s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .project-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
-        }
-
-        .project-icon {
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-
-        .project-card h3 {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .project-card p {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .project-tag {
-            display: inline-block;
-            padding: 3px 8px;
-            background: var(--surface-2);
-            border-radius: 4px;
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: 10px;
-        }
-
-        .project-status {
-            display: block;
-            font-size: 11px;
-            color: var(--green);
-            margin-top: 8px;
-            font-weight: 500;
-        }
-
-        /* Gaming */
-        .gaming-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .gaming-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gaming-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), var(--orange));
-        }
-
-        .gaming-card .game-name {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-
-        .gaming-card .rank {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--orange), var(--red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-        }
-
-        .gaming-card .rank-detail {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-top: 4px;
-            line-height: 1.5;
-        }
-
-        /* Beliefs */
-        .beliefs {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .belief {
-            padding: 20px 24px;
-            background: var(--surface);
-            border-left: 2px solid var(--accent);
-            border-radius: 0 8px 8px 0;
-            font-size: 15px;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        .belief em {
-            color: var(--text);
-            font-style: normal;
-            font-weight: 500;
-        }
-
-        /* Interests */
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .interest-tag {
-            padding: 8px 16px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            font-size: 13px;
-            color: var(--text-muted);
-            transition: all 0.2s;
-        }
-
-        .interest-tag:hover {
-            border-color: var(--accent);
-            color: var(--text);
-        }
-
-        /* Footer */
-        footer {
-            padding: 48px 0;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* Responsive */
-        @media (max-width: 640px) {
-            h1 { font-size: 32px; }
-            .hero { padding: 50px 0 32px; }
-            .hero-sub { font-size: 15px; line-height: 1.7; }
-            .hero-links { gap: 8px; }
-            .hero-links a { padding: 7px 12px; font-size: 13px; }
-            .projects-grid, .gaming-stats { grid-template-columns: 1fr; }
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 4px;
-            }
-            section { padding: 36px 0; }
-            .about-text { font-size: 15px; line-height: 1.8; }
-            .about-text br { display: none; }
-            .belief { padding: 16px 18px; font-size: 14px; }
-            .lang-toggle { top: 12px; right: 16px; }
-            .gaming-card .rank { font-size: 28px; }
-        }
-
-        /* iPhone safe area */
         @supports (padding: env(safe-area-inset-top)) {
-            body {
-                padding-top: env(safe-area-inset-top);
-                padding-bottom: env(safe-area-inset-bottom);
-                padding-left: env(safe-area-inset-left);
-                padding-right: env(safe-area-inset-right);
-            }
+            .nav { padding-top: env(safe-area-inset-top); }
+            body { padding-bottom: env(safe-area-inset-bottom); }
         }
-
-        /* Animations */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp 0.6s ease forwards;
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-up:nth-child(2) { animation-delay: 0.1s; }
-        .fade-up:nth-child(3) { animation-delay: 0.2s; }
-        .fade-up:nth-child(4) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
-    <nav class="lang-toggle" aria-label="语言切换">
-        <a href="rocky-homepage.html">EN</a>
-        <a href="rocky-homepage-cn-v2.html" class="active" aria-current="page">中文</a>
+
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Rocky Li</a>
+            <div class="nav-links">
+                <a href="#about">关于</a>
+                <a href="#projects">项目</a>
+                <a href="#experience">经历</a>
+                <a href="#contact">联系</a>
+                <a href="rocky-homepage.html" class="lang-btn">EN</a>
+            </div>
+        </div>
     </nav>
 
-    <main class="container">
-        <!-- Hero -->
-        <section class="hero">
-            <div class="fade-up">
-                <div class="hero-badge">
-                    <span class="dot"></span>
-                    构建中 · Building in public
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-badge"><span class="dot"></span>构建中 · Building in public</div>
+                    <h1>你好，我是<br><span class="name">林翼 Rocky</span></h1>
+                    <p class="hero-desc">从电竞到云计算，现居英国。<br>用 Vibe Coding 构建 AI 原生产品，想让信息更自由地流动。</p>
+                    <div class="hero-actions">
+                        <a href="https://www.linkedin.com/in/linyi-li-899200171/" class="btn btn-primary" target="_blank">LinkedIn</a>
+                        <a href="mailto:rockyl@player1.bot" class="btn btn-secondary">rockyl@player1.bot</a>
+                        <a href="#" class="btn btn-secondary" onclick="navigator.clipboard.writeText('林翼的学习宇宙');this.textContent='已复制！';setTimeout(()=>this.textContent='公众号：林翼的学习宇宙',2000);return false;">公众号：林翼的学习宇宙</a>
+                    </div>
                 </div>
             </div>
-            <h1 class="fade-up">你好，我是<span>林翼</span></h1>
-            <p class="hero-sub fade-up">
-                从电竞到云计算与网络硬件，现居英国。<br>用打游戏的方法论探索 Agentic AI 中，想构建一些有用的东西。
-            </p>
-            <div class="hero-links fade-up">
-                <a href="https://www.linkedin.com/in/linyi-li-899200171/" class="btn-primary" target="_blank">LinkedIn</a>
-                <a href="mailto:rockyl@player1.bot" class="btn-ghost">✉ rockyl@player1.bot</a>
-                <a href="#" class="btn-ghost" onclick="navigator.clipboard.writeText('林翼的学习宇宙');this.textContent='✓ 已复制！';setTimeout(()=>this.textContent='📱 公众号：林翼的学习宇宙',2000);return false;">📱 公众号：林翼的学习宇宙</a>
+            <canvas class="hero-flow" id="flowCanvas" aria-hidden="true"></canvas>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">关于我</div>
+                <h2 class="section-title">从生态构建者到独立开发者</h2>
             </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- About -->
-        <section>
-            <div class="section-label">About · 关于我</div>
-            <div class="about-text">
-                <p>
-                    在<strong>华为</strong>的 5 年，我从运营商网络到云计算生态，从深圳到新加坡再到雅加达。
-                    在那里我学到一件事：<strong>平台的价值，在于让生态里的每个人都能成功。</strong>
-                </p>
-                <br>
-                <p>
-                    2025 年，我开始独立构建产品。
-                    食历、Interlock、多 Agent 协作系统，背后始终是同一个命题：
-                    <strong>信息的流动方式，如何真正影响人的行为——以及 Agent 的行为？</strong>
-                </p>
-                <div class="about-quote">「让信息更自由地流动。」</div>
+            <div class="about-grid">
+                <div class="about-card reveal reveal-d1">
+                    <h3>华为五年</h3>
+                    <p>从运营商网络到云计算生态，从深圳到新加坡再到雅加达。学到一件事：<strong>平台的价值，在于让生态里的每个人都能成功。</strong></p>
+                </div>
+                <div class="about-card reveal reveal-d2">
+                    <h3>Vibe Coding</h3>
+                    <p>2025 年开始独立构建产品。没有技术背景，但用 AI 把想法变成现实——<strong>食历、Interlock、Agent 系统，</strong>一个人就是一支队伍。</p>
+                </div>
+                <div class="about-card about-quote-card full-width reveal reveal-d3">
+                    <p>「让信息更自由地流动」——这是我所有项目背后的同一个命题。</p>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <!-- Experience -->
-        <section>
-            <div class="section-label">Experience · 经历</div>
-            <div class="timeline">
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">项目</div>
+                <h2 class="section-title">正在构建的东西</h2>
+            </div>
+            <div class="projects-grid">
+                <a href="https://shili365.com" target="_blank" class="project-card reveal reveal-d1">
+                    <img src="shili-logo.png" alt="食历" class="project-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy">
+                    <div class="project-emoji" style="display:none">🍎</div>
+                    <h3>Freshkeeper 食历</h3>
+                    <p>AI 厨房助手——拍照识别食材、追踪保质期、减少食物浪费。</p>
+                    <div class="project-meta"><span class="project-tag">iOS · AI</span><span class="project-status">已上线 App Store</span></div>
+                </a>
+                <a href="https://chromewebstore.google.com/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E4%B8%93%E6%B3%A8/gkbdjmhnoojceeebecelomifpknihgje" target="_blank" class="project-card reveal reveal-d2">
+                    <img src="interlock-logo.png" alt="Interlock" class="project-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy">
+                    <div class="project-emoji" style="display:none">🧊</div>
+                    <h3>Interlock 沉浸式专注</h3>
+                    <p>屏蔽网页干扰、帮助用户找回深度专注的 Chrome 扩展。</p>
+                    <div class="project-meta"><span class="project-tag">Chrome 扩展</span><span class="project-status">已上线</span></div>
+                </a>
+                <a href="https://www.youtube.com/@Rockyislearning" target="_blank" class="project-card reveal reveal-d3">
+                    <div class="project-emoji">🏔️</div>
+                    <h3>北极人物志</h3>
+                    <p>北极邮轮上的人物采访纪录片，记录极地旅途中遇到的人与故事。</p>
+                    <div class="project-meta"><span class="project-tag">纪录片 · YouTube</span><span class="project-status">更新中</span></div>
+                </a>
+                <a href="#" class="project-card reveal reveal-d4" onclick="navigator.clipboard.writeText('林翼的学习宇宙');alert('公众号名已复制，请在微信中搜索关注');return false;">
+                    <div class="project-emoji">📡</div>
+                    <h3>硅谷大佬们这周说了什么</h3>
+                    <p>每周追踪 34 位硅谷 AI 创始人在 X 上的最新观点，AI 采集、人工筛选。</p>
+                    <div class="project-meta"><span class="project-tag">微信公众号</span><span class="project-status">每周更新</span></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">另一个我</div>
+                <h2 class="section-title">竞技成就</h2>
+            </div>
+            <div class="gaming-row reveal reveal-d1">
+                <div class="gaming-card">
+                    <div class="gaming-label">炉石传说</div>
+                    <div class="gaming-rank">全国第一</div>
+                    <div class="gaming-detail">国服天梯 · 2018 年 11 月</div>
+                </div>
+                <div class="gaming-card">
+                    <div class="gaming-label">Dota 2</div>
+                    <div class="gaming-rank">前 100</div>
+                    <div class="gaming-detail">国服天梯 · 2019 年 FTD 战队试训</div>
+                </div>
+                <div class="gaming-insight">竞技游戏和创业本质上是同一件事——在信息不完整的情况下做出最优决策，然后承担结果。</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section exp-section" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">经历</div>
+                <h2 class="section-title">职业轨迹</h2>
+            </div>
+            <div class="timeline reveal">
                 <div class="timeline-item">
                     <div class="timeline-date">2025 — 至今</div>
-                    <div class="timeline-content">
+                    <div class="timeline-body">
                         <h3>AI 独立开发者</h3>
                         <div class="company">Independent</div>
-                        <p>构建 AI 原生产品——iOS 应用、浏览器插件、Agent 基础设施。探索多 Agent 协作的能力边界。</p>
+                        <p>构建 AI 原生产品<br>iOS · Chrome · Agent</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2024 — 2025</div>
-                    <div class="timeline-content">
+                    <div class="timeline-body">
                         <h3>生态发展经理</h3>
-                        <div class="company">华为云 · 雅加达，印尼</div>
-                        <p>负责印尼市场整体生态建设，与本地主流 SI、IT 服务商和软件公司合作，帮助中资企业落地印尼。</p>
+                        <div class="company">华为云 · 雅加达</div>
+                        <p>印尼市场生态建设<br>本地伙伴合作</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2022 — 2024</div>
-                    <div class="timeline-content">
+                    <div class="timeline-body">
                         <h3>商业化发展经理</h3>
                         <div class="company">华为云 · 新加坡</div>
-                        <p>先后负责云商店海外商业化、海外软件伙伴发展。负责支持亚太、拉美、非洲战略项目的软件生态引入。</p>
+                        <p>云商店海外商业化<br>软件伙伴生态发展</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2020 — 2022</div>
-                    <div class="timeline-content">
+                    <div class="timeline-body">
                         <h3>解决方案工程师</h3>
                         <div class="company">华为技术 · 中国</div>
-                        <p>面向运营商客户的解决方案售前，负责华为网络产品线。</p>
+                        <p>运营商客户售前<br>网络产品线</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2018 — 2019</div>
-                    <div class="timeline-content">
-                        <h3>数据科学与分析 硕士</h3>
-                        <div class="company">利兹大学 · University of Leeds</div>
+                    <div class="timeline-body">
+                        <h3>数据科学 硕士</h3>
+                        <div class="company">利兹大学</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2013 — 2017</div>
-                    <div class="timeline-content">
+                    <div class="timeline-body">
                         <h3>经济统计学 本科</h3>
                         <div class="company">中南财经政法大学</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="divider"></div>
-
-        <!-- Projects -->
-        <section>
-            <div class="section-label">Projects · 项目</div>
-            <div class="projects-grid">
-                <a href="https://shili365.com" target="_blank" class="project-card">
-                    <div class="project-icon"><img src="shili-logo.png" alt="食历" loading="lazy" style="width:56px;height:56px;border-radius:14px;object-fit:cover;"></div>
-                    <h3>Freshkeeper 食历</h3>
-                    <p>AI 厨房助手——拍照识别食材、追踪保质期、减少食物浪费。</p>
-                    <span class="project-tag">iOS · AI</span>
-                    <span class="project-status">✦ 已上线 App Store</span>
-                </a>
-                <a href="https://chromewebstore.google.com/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E4%B8%93%E6%B3%A8/gkbdjmhnoojceeebecelomifpknihgje" target="_blank" class="project-card">
-                    <div class="project-icon"><img src="interlock-logo.png" alt="Interlock" loading="lazy" style="width:56px;height:56px;border-radius:14px;object-fit:cover;"></div>
-                    <h3>Interlock 沉浸式专注</h3>
-                    <p>屏蔽网页干扰、帮助用户找回深度专注的 Chrome 扩展。</p>
-                    <span class="project-tag">Chrome 扩展</span>
-                    <span class="project-status">✦ 已上线 Chrome Web Store</span>
-                </a>
-                <a href="https://www.youtube.com/@Rockyislearning" target="_blank" class="project-card">
-                    <div class="project-icon">🏔️</div>
-                    <h3>北极人物志</h3>
-                    <p>北极邮轮上的人物采访纪录片，记录极地旅途中遇到的人与故事。</p>
-                    <span class="project-tag">纪录片 · YouTube</span>
-                    <span class="project-status">✦ 第一期已发布 · 更新中</span>
-                </a>
-                <a href="#" class="project-card" onclick="navigator.clipboard.writeText('林翼的学习宇宙');alert('公众号名已复制，请在微信中搜索关注');return false;">
-                    <div class="project-icon">📡</div>
-                    <h3>硅谷大佬们这周说了什么</h3>
-                    <p>每周追踪 34 位硅谷 AI 创始人在 X 上的最新观点，AI 采集、人工筛选。致力于分享一手信息，让每个人形成自己的判断。</p>
-                    <span class="project-tag">微信公众号</span>
-                    <span class="project-status">✦ 每周更新</span>
-                </a>
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">我相信</div>
+                <h2 class="section-title">驱动我的信念</h2>
             </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- Gaming -->
-        <section>
-            <div class="section-label">Another Me · 另一个我</div>
-            <div class="gaming-stats">
-                <div class="gaming-card">
-                    <div class="game-name">炉石传说</div>
-                    <div class="rank">全国第一</div>
-                    <div class="rank-detail">国服天梯 · 2018 年 11 月</div>
+            <div class="beliefs-list reveal reveal-d1">
+                <div class="belief-item">
+                    <div class="belief-title">好的工具改变人的行为</div>
+                    <div class="belief-desc">技术的价值不在于复杂，在于让普通人获得原本没有的能力。</div>
                 </div>
-                <div class="gaming-card">
-                    <div class="game-name">Dota 2</div>
-                    <div class="rank">前 100</div>
-                    <div class="rank-detail">国服天梯 · 2019 年参加 FTD 战队试训</div>
+                <div class="belief-item">
+                    <div class="belief-title">「不做什么」比「做什么」更重要</div>
+                    <div class="belief-desc">明确的边界带来真正的专注。</div>
+                </div>
+                <div class="belief-item">
+                    <div class="belief-title">信息流动决定世界运转</div>
+                    <div class="belief-desc">从云生态到大模型，知识如何更高效地在人与人之间传递？</div>
+                </div>
+                <div class="belief-item">
+                    <div class="belief-title">意义是被经历出来的</div>
+                    <div class="belief-desc">所以去体验，去构建，去试错。</div>
                 </div>
             </div>
-            <p style="font-size: 14px; color: var(--text-muted); margin-top: 16px; line-height: 1.7;">
-                高强度竞技教给我的，不是技巧，是<strong style="color: var(--text); font-weight: 500;">如何在高度不确定的环境下做出赢下比赛的决策</strong>——这后来成了我构建产品的底层方法论。
-            </p>
-        </section>
+        </div>
+    </section>
 
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <!-- Beliefs -->
-        <section>
-            <div class="section-label">What I Believe · 我相信</div>
-            <div class="beliefs">
-                <div class="belief">
-                    <em>好的工具改变人的行为。</em>技术的价值不在于复杂，在于让普通人获得原本没有的能力。
-                </div>
-                <div class="belief">
-                    <em>「不做什么」比「做什么」更容易坚持。</em>明确的边界带来真正的专注。
-                </div>
-                <div class="belief">
-                    <em>信息的流动方式决定世界的运转方式。</em>从云生态到大模型，我一直在思考同一个问题：知识如何更高效地在人与人之间传递？
-                </div>
-                <div class="belief">
-                    <em>意义不是被发现的，是被经历出来的。</em>
-                </div>
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">不构建时</div>
+                <h2 class="section-title">生活的另一面</h2>
             </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- Interests -->
-        <section>
-            <div class="section-label">When Not Building · 不构建时</div>
-            <div class="interests">
-                <span class="interest-tag">🏔️ 山地徒步</span>
-                <span class="interest-tag">🎾 网球</span>
-                <span class="interest-tag">🏋️ 健身 & 瑜伽</span>
-                <span class="interest-tag">🎵 音乐（前乐队成员）</span>
-                <span class="interest-tag">🎬 科恩兄弟影迷</span>
-                <span class="interest-tag">✈️ 旅行</span>
-                <span class="interest-tag">📖 加缪读者</span>
+            <div class="interests-wrap reveal">
+                <span class="interest-pill">🏔️ 山地徒步</span>
+                <span class="interest-pill">🎾 网球</span>
+                <span class="interest-pill">🏋️ 健身 & 瑜伽</span>
+                <span class="interest-pill">🎵 音乐（前乐队成员）</span>
+                <span class="interest-pill">🎬 科恩兄弟影迷</span>
+                <span class="interest-pill">✈️ 旅行</span>
+                <span class="interest-pill">📖 加缪读者</span>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <section class="contact-section" id="contact">
+        <div class="container reveal">
+            <h2 class="contact-title">一起做点什么？</h2>
+            <p class="contact-desc">无论是产品合作、AI 探索，还是聊聊想法——我总是乐意认识有趣的人。</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/linyi-li-899200171/" class="btn btn-primary" target="_blank">LinkedIn</a>
+                <a href="mailto:rockyl@player1.bot" class="btn btn-secondary">rockyl@player1.bot</a>
+                <a href="https://www.youtube.com/@Rockyislearning" class="btn btn-secondary" target="_blank">YouTube</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="container">
-        <p>林翼 Rocky Li · 2026 · player1.bot</p>
-    </footer>
+    <footer><p>林翼 Rocky Li · 2026 · player1.bot</p></footer>
+
+    <script>
+        // Nav
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Card glow
+        document.querySelectorAll('.project-card, .about-card').forEach(card => {
+            const glow = document.createElement('div');
+            glow.classList.add('card-glow');
+            card.appendChild(glow);
+            card.addEventListener('mousemove', e => {
+                const r = card.getBoundingClientRect();
+                glow.style.left = (e.clientX - r.left) + 'px';
+                glow.style.top = (e.clientY - r.top) + 'px';
+            });
+        });
+
+        // ===== FLOW CANVAS =====
+        const canvas = document.getElementById('flowCanvas');
+        if (canvas && window.innerWidth > 768) {
+            const ctx = canvas.getContext('2d');
+            let W, H;
+
+            function resize() {
+                const rect = canvas.parentElement.getBoundingClientRect();
+                W = canvas.width = canvas.offsetWidth;
+                H = canvas.height = canvas.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const colors = ['57,57,255', '219,184,255', '255,91,34', '242,187,5', '14,165,160'];
+            const particles = [];
+            const count = 50;
+
+            class Particle {
+                constructor() { this.reset(true); }
+                reset(init) {
+                    this.x = init ? Math.random() * W : -10;
+                    this.y = Math.random() * H;
+                    this.vx = 0.3 + Math.random() * 0.8;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                    this.r = 1.5 + Math.random() * 2;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.alpha = 0.15 + Math.random() * 0.35;
+                    // Sine wave drift
+                    this.freq = 0.005 + Math.random() * 0.01;
+                    this.amp = 20 + Math.random() * 40;
+                    this.phase = Math.random() * Math.PI * 2;
+                    this.t = 0;
+                }
+                update() {
+                    this.t++;
+                    this.x += this.vx;
+                    this.y += Math.sin(this.t * this.freq + this.phase) * 0.5;
+                    if (this.x > W + 10) this.reset(false);
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < count; i++) particles.push(new Particle());
+
+            const linkDist = 100;
+
+            function animate() {
+                ctx.clearRect(0, 0, W, H);
+
+                // Draw links
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < linkDist) {
+                            const opacity = (1 - dist / linkDist) * 0.08;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(57,57,255,${opacity})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                // Draw & update particles
+                particles.forEach(p => { p.update(); p.draw(); });
+
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => { e.preventDefault(); document.querySelector(link.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' }); });
+        });
+    </script>
 </body>
 </html>

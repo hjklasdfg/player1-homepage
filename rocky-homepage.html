@@ -3,602 +3,581 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rocky Li — Builder, Explorer, Thinker</title>
+    <title>Rocky's Homepage</title>
+    <meta name="description" content="Rocky Li — From competitive gaming to cloud computing, now based in the UK. Building AI-native products with Vibe Coding.">
+    <meta property="og:title" content="Rocky Li — Builder, Explorer, Thinker">
+    <meta property="og:description" content="From competitive gaming to cloud computing, now based in the UK. Exploring Agentic AI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://player1.bot">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Rocky1eee">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0a0b;
-            --surface: #141416;
-            --surface-2: #1c1c20;
-            --border: #2a2a2e;
-            --text: #e8e8ec;
-            --text-muted: #8b8b95;
-            --accent: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.15);
-            --green: #22c55e;
-            --orange: #f59e0b;
-            --red: #ef4444;
+            --bg: #FCFCFC;
+            --surface: #FFFFFF;
+            --surface-alt: #F6F6F6;
+            --border: rgba(0,0,0,0.06);
+            --border-strong: rgba(0,0,0,0.1);
+            --text: #1A1A1A;
+            --text-secondary: #666;
+            --text-muted: #999;
+            --accent: #3939FF;
+            --orange: #FF5B22;
+            --yellow: #F2BB05;
+            --purple: #DBB8FF;
+            --teal: #0EA5A0;
+            --radius: 16px;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
+            --font: 'Inter', -apple-system, system-ui, sans-serif;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        ::selection { background: var(--accent); color: white; }
 
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 40px; transition: all 0.3s; }
+        .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+        .nav.scrolled { background: rgba(252,252,252,0.85); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--border); }
+        .nav-logo { font-size: 17px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-links { display: flex; align-items: center; gap: 2px; }
+        .nav-links a { padding: 6px 12px; font-size: 13px; font-weight: 500; color: var(--text-secondary); text-decoration: none; border-radius: 6px; transition: all 0.2s; }
+        .nav-links a:hover { color: var(--text); background: var(--surface-alt); }
+        .nav-links .lang-btn { margin-left: 6px; border: 1px solid var(--border-strong); font-size: 12px; font-weight: 600; border-radius: 100px; padding: 4px 12px; }
+        .nav-links .lang-btn:hover { background: var(--text); color: white; border-color: var(--text); }
 
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 9999;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+        .section { padding: 64px 0; }
+        .section-header { margin-bottom: 32px; }
+        .section-tag { font-size: 12px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.5px; margin-bottom: 8px; display: block; }
+        .section-title { font-size: clamp(24px, 3vw, 32px); font-weight: 800; letter-spacing: -1px; line-height: 1.15; }
 
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 100px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; font-family: var(--font); }
+        .btn-primary { background: var(--text); color: white; }
+        .btn-primary:hover { opacity: 0.85; }
+        .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
+        .btn-secondary:hover { background: var(--surface-alt); border-color: var(--text); }
 
-        /* Hero */
-        .hero {
-            padding: 100px 0 60px;
-            position: relative;
-        }
+        /* HERO */
+        .hero { padding: 100px 0 48px; position: relative; overflow: hidden; }
+        .hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; z-index: 1; }
+        .hero-content { max-width: 560px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; background: var(--surface-alt); border-radius: 100px; font-size: 12px; font-weight: 500; color: var(--text-secondary); margin-bottom: 24px; }
+        .hero-badge .dot { width: 6px; height: 6px; background: #22C55E; border-radius: 50%; animation: pulse 2.5s ease-in-out infinite; }
+        @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+        .hero h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 900; line-height: 1.0; letter-spacing: -2.5px; margin-bottom: 20px; }
+        .hero h1 .name { display: block; background: linear-gradient(135deg, var(--accent), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-desc { font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; }
+        .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
-        .hero::before {
-            content: '';
+        /* Flow canvas */
+        .hero-flow {
             position: absolute;
-            top: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        .hero-badge .dot {
-            width: 6px;
-            height: 6px;
-            background: var(--green);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
-            margin-bottom: 16px;
-        }
-
-        h1 span {
-            background: linear-gradient(135deg, var(--accent), #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-sub {
-            font-size: 18px;
-            color: var(--text-muted);
-            max-width: 500px;
-            line-height: 1.7;
-        }
-
-        .hero-links {
-            display: flex;
-            gap: 12px;
-            margin-top: 28px;
-            flex-wrap: wrap;
-        }
-
-        .hero-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #5558e6;
-            transform: translateY(-1px);
-        }
-
-        .btn-ghost {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text);
-        }
-
-        .btn-ghost:hover {
-            border-color: var(--accent);
-            background: var(--accent-glow);
-        }
-
-        /* Sections */
-        section {
-            padding: 48px 0;
-        }
-
-        .section-label {
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            margin-bottom: 16px;
-        }
-
-        .divider {
-            height: 1px;
-            background: var(--border);
-            margin: 0;
-        }
-
-        /* About */
-        .about-text {
-            color: var(--text-muted);
-            font-size: 16px;
-            line-height: 1.8;
-        }
-
-        .about-text strong {
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        /* Experience */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 20px;
-            align-items: start;
-        }
-
-        .timeline-date {
-            font-size: 13px;
-            color: var(--text-muted);
-            font-weight: 500;
-            padding-top: 2px;
-        }
-
-        .timeline-content h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .timeline-content .company {
-            font-size: 14px;
-            color: var(--accent);
-            margin-bottom: 6px;
-        }
-
-        .timeline-content p {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .project-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            transition: all 0.25s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .project-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
-        }
-
-        .project-icon {
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-
-        .project-card h3 {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .project-card p {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        .project-tag {
-            display: inline-block;
-            padding: 3px 8px;
-            background: var(--surface-2);
-            border-radius: 4px;
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: 10px;
-        }
-
-        /* Gaming */
-        .gaming-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .gaming-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gaming-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+            top: 80px;
             right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), var(--orange));
+            width: 55%;
+            height: calc(100% - 80px);
+            pointer-events: none;
         }
 
-        .gaming-card .game-name {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 8px;
+        /* ABOUT */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .about-card { background: var(--surface); border-radius: var(--radius); padding: 28px; border: 1px solid var(--border); transition: all 0.3s; position: relative; overflow: hidden; }
+        .about-card:hover { box-shadow: var(--shadow-md); }
+        .about-card.full-width { grid-column: 1 / -1; }
+        .about-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+        .about-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+        .about-card p strong { color: var(--text); font-weight: 600; }
+        .about-quote-card { text-align: center; padding: 32px; }
+        .about-quote-card p { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; line-height: 1.5; }
+
+        /* PROJECTS */
+        .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: all 0.3s; position: relative; overflow: hidden; }
+        .project-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: transparent; }
+        .project-logo { width: 44px; height: 44px; border-radius: 11px; object-fit: cover; margin-bottom: 14px; }
+        .project-emoji { width: 44px; height: 44px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; background: var(--surface-alt); }
+        .project-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; }
+        .project-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+        .project-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+        .project-tag { font-size: 11px; font-weight: 600; color: var(--text-muted); }
+        .project-status { font-size: 11px; font-weight: 600; color: #22C55E; display: flex; align-items: center; gap: 4px; }
+        .project-status::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #22C55E; }
+
+        /* EXPERIENCE — horizontal timeline */
+        .exp-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .timeline { display: grid; grid-template-columns: repeat(6, 1fr); position: relative; padding-top: 36px; }
+        .timeline::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--text); }
+        .timeline-item { padding: 0 8px; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; top: -40px; left: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--text); }
+        .timeline-date { font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
+        .timeline-body h3 { font-size: 13px; font-weight: 700; margin-bottom: 2px; line-height: 1.3; }
+        .timeline-body .company { font-size: 12px; color: var(--text-secondary); font-weight: 500; margin-bottom: 4px; }
+        .timeline-body p { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+
+        /* GAMING */
+        .gaming-row { display: flex; gap: 14px; align-items: stretch; }
+        .gaming-card { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: all 0.3s; position: relative; overflow: hidden; }
+        .gaming-card:hover { box-shadow: var(--shadow-md); }
+        .gaming-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 8px; }
+        .gaming-rank { font-size: 32px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 4px; }
+        .gaming-card:first-child .gaming-rank { color: var(--orange); }
+        .gaming-card:nth-child(2) .gaming-rank { color: var(--accent); }
+        .gaming-detail { font-size: 12px; color: var(--text-muted); }
+        .gaming-insight { flex: 1.5; display: flex; align-items: center; padding: 24px 32px; background: var(--text); color: white; border-radius: var(--radius); font-size: 15px; line-height: 1.7; font-weight: 500; }
+
+        /* BELIEFS */
+        .beliefs-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden; }
+        .belief-item { display: grid; grid-template-columns: 1fr 1.5fr; gap: 32px; padding: 24px 32px; background: var(--surface); transition: background 0.2s; }
+        .belief-item:hover { background: var(--surface-alt); }
+        .belief-title { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
+        .belief-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; align-self: center; }
+
+        /* INTERESTS */
+        .interests-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+        .interest-pill { padding: 8px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 100px; font-size: 13px; font-weight: 500; color: var(--text-secondary); transition: all 0.2s; cursor: default; }
+        .interest-pill:hover { border-color: var(--text); color: var(--text); }
+
+        /* CONTACT */
+        .contact-section { text-align: center; padding: 64px 0; }
+        .contact-title { font-size: clamp(28px, 4vw, 40px); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 10px; }
+        .contact-desc { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .contact-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+        footer { padding: 28px 40px; text-align: center; border-top: 1px solid var(--border); }
+        footer p { font-size: 12px; color: var(--text-muted); }
+
+        /* DIVIDER */
+        .divider { height: 1px; background: var(--border); margin: 0; }
+
+        /* ANIMATIONS — simple fade-up on scroll */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-d1 { transition-delay: 0.06s; }
+        .reveal-d2 { transition-delay: 0.12s; }
+        .reveal-d3 { transition-delay: 0.18s; }
+        .reveal-d4 { transition-delay: 0.24s; }
+
+        /* Hero entrance */
+        .hero-content > * { opacity: 0; animation: fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) both; }
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+        @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+
+        /* Name gradient shimmer */
+        .hero h1 .name {
+            background-size: 200% 100%;
+            animation: shimmer 4s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
         }
 
-        .gaming-card .rank {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--orange), var(--red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
+        /* Gaming rank pulse glow */
+        .gaming-rank { animation: rankGlow 3s ease-in-out infinite; }
+        .gaming-card:first-child .gaming-rank { --glow-color: var(--orange); }
+        .gaming-card:nth-child(2) .gaming-rank { --glow-color: var(--accent); }
+        @keyframes rankGlow {
+            0%, 100% { text-shadow: none; }
+            50% { text-shadow: 0 0 20px color-mix(in srgb, var(--glow-color, var(--orange)) 25%, transparent); }
         }
 
-        .gaming-card .rank-detail {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-top: 4px;
-            line-height: 1.5;
+        /* Status dot breathe */
+        .project-status::before { animation: statusBreathe 2s ease-in-out infinite; }
+        @keyframes statusBreathe {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(34,197,94,0); }
         }
 
-        /* Beliefs */
-        .beliefs {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+        /* Card glow */
+        .card-glow { position: absolute; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(57,57,255,0.05) 0%, transparent 70%); pointer-events: none; transform: translate(-50%,-50%); opacity: 0; transition: opacity 0.3s; }
+        .project-card:hover .card-glow, .about-card:hover .card-glow { opacity: 1; }
 
-        .belief {
-            padding: 20px 24px;
-            background: var(--surface);
-            border-left: 2px solid var(--accent);
-            border-radius: 0 8px 8px 0;
-            font-size: 15px;
-            color: var(--text-muted);
-            line-height: 1.6;
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav { padding: 0 20px; }
+            .nav-links a:not(.lang-btn) { display: none; }
+            .container { padding: 0 20px; }
+            .section { padding: 48px 0; }
+            .hero { padding: 80px 0 32px; }
+            .hero-inner { flex-direction: column; align-items: flex-start; }
+            .hero-flow { display: none; }
+            .hero h1 { letter-spacing: -1.5px; }
+            .about-grid, .projects-grid { grid-template-columns: 1fr; }
+            .timeline { grid-template-columns: repeat(3, 1fr); row-gap: 24px; }
+            .gaming-row { flex-direction: column; }
+            .belief-item { grid-template-columns: 1fr; gap: 6px; padding: 20px; }
         }
-
-        .belief em {
-            color: var(--text);
-            font-style: normal;
-            font-weight: 500;
+        @media (max-width: 480px) {
+            .hero-actions { flex-direction: column; }
+            .hero-actions .btn { justify-content: center; }
+            .contact-links { flex-direction: column; align-items: center; }
+            .timeline { grid-template-columns: repeat(2, 1fr); }
         }
-
-        /* Interests */
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+        @supports (padding: env(safe-area-inset-top)) {
+            .nav { padding-top: env(safe-area-inset-top); }
+            body { padding-bottom: env(safe-area-inset-bottom); }
         }
-
-        .interest-tag {
-            padding: 8px 16px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            font-size: 13px;
-            color: var(--text-muted);
-            transition: all 0.2s;
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
-
-        .interest-tag:hover {
-            border-color: var(--accent);
-            color: var(--text);
-        }
-
-        /* Footer */
-        footer {
-            padding: 48px 0;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        footer .quote {
-            font-size: 15px;
-            font-style: italic;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-            opacity: 0.7;
-        }
-
-        /* Responsive */
-        @media (max-width: 640px) {
-            h1 { font-size: 36px; }
-            .hero { padding: 60px 0 40px; }
-            .projects-grid, .gaming-stats { grid-template-columns: 1fr; }
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 4px;
-            }
-        }
-
-        /* Animations */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp 0.6s ease forwards;
-        }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-up:nth-child(2) { animation-delay: 0.1s; }
-        .fade-up:nth-child(3) { animation-delay: 0.2s; }
-        .fade-up:nth-child(4) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero -->
-        <section class="hero">
-            <div class="fade-up">
-                <div class="hero-badge">
-                    <span class="dot"></span>
-                    Open to opportunities
+
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Rocky Li</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+                <a href="index.html" class="lang-btn">中文</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-badge"><span class="dot"></span>Building in public</div>
+                    <h1>Hi, I'm<br><span class="name">Rocky</span></h1>
+                    <p class="hero-desc">From competitive gaming to cloud computing, now based in the UK.<br>Building AI-native products with Vibe Coding — making information flow more freely.</p>
+                    <div class="hero-actions">
+                        <a href="https://www.linkedin.com/in/linyi-li-899200171/" class="btn btn-primary" target="_blank">LinkedIn</a>
+                        <a href="mailto:rockyl@player1.bot" class="btn btn-secondary">rockyl@player1.bot</a>
+                        <a href="https://www.youtube.com/@Rockyislearning" class="btn btn-secondary" target="_blank">YouTube</a>
+                    </div>
                 </div>
             </div>
-            <h1 class="fade-up">Hi, I'm <span>Rocky</span></h1>
-            <p class="hero-sub fade-up">
-                From competitive gaming to cloud computing and network hardware. 
-                Based in the UK, exploring Agentic AI with a gamer's mindset — building things that matter.
-            </p>
-            <div class="hero-links fade-up">
-                <a href="https://www.linkedin.com/in/linyi-li-899200171/" class="btn-primary" target="_blank">LinkedIn</a>
-                <a href="https://www.youtube.com/@Rockyislearning" class="btn-ghost" target="_blank">▶ YouTube</a>
-                <a href="mailto:rockyl@player1.bot" class="btn-ghost">✉ rockyl@player1.bot</a>
+            <canvas class="hero-flow" id="flowCanvas" aria-hidden="true"></canvas>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">About</div>
+                <h2 class="section-title">From ecosystem builder to indie developer</h2>
             </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- About -->
-        <section>
-            <div class="section-label">About</div>
-            <div class="about-text">
-                <p>
-                    I spent 5 years at <strong>Huawei Cloud</strong> helping software partners succeed commercially — 
-                    building ecosystems from Singapore to Jakarta. I've seen how platforms work from the inside: 
-                    cloud is the OS, partners are the apps.
-                </p>
-                <br>
-                <p>
-                    Now I'm deep in the <strong>AI vibe coding</strong> wave — building tools, experimenting with LLMs, 
-                    and figuring out how AI changes the way we create and communicate. 
-                    I believe <strong>information transfer</strong> is the deepest lever for change, 
-                    and LLMs are rewriting the rules.
-                </p>
-                <br>
-                <p>
-                    Background: <strong>Economic Statistics</strong> (ZUEL) → <strong>Data Science & Analytics</strong> (University of Leeds).
-                    Based in the UK.
-                </p>
+            <div class="about-grid">
+                <div class="about-card reveal reveal-d1">
+                    <h3>5 Years at Huawei</h3>
+                    <p>From carrier networks to cloud ecosystems, from Shenzhen to Singapore to Jakarta. One lesson learned: <strong>a platform's value lies in helping everyone in the ecosystem succeed.</strong></p>
+                </div>
+                <div class="about-card reveal reveal-d2">
+                    <h3>Vibe Coding</h3>
+                    <p>Started building products independently in 2025. No CS degree, but turning ideas into reality with AI — <strong>FreshKeeper, Interlock, Agent systems.</strong> One person, one team.</p>
+                </div>
+                <div class="about-card about-quote-card full-width reveal reveal-d3">
+                    <p>"Make information flow more freely" — the single thread behind everything I build.</p>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <!-- Experience -->
-        <section>
-            <div class="section-label">Experience</div>
-            <div class="timeline">
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Projects</div>
+                <h2 class="section-title">What I'm building</h2>
+            </div>
+            <div class="projects-grid">
+                <a href="https://shili365.com" target="_blank" class="project-card reveal reveal-d1">
+                    <img src="shili-logo.png" alt="FreshKeeper" class="project-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy">
+                    <div class="project-emoji" style="display:none">🍎</div>
+                    <h3>FreshKeeper</h3>
+                    <p>AI kitchen assistant — snap a photo to identify ingredients, track expiry dates, reduce food waste.</p>
+                    <div class="project-meta"><span class="project-tag">iOS · AI</span><span class="project-status">Live on App Store</span></div>
+                </a>
+                <a href="https://chromewebstore.google.com/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E4%B8%93%E6%B3%A8/gkbdjmhnoojceeebecelomifpknihgje" target="_blank" class="project-card reveal reveal-d2">
+                    <img src="interlock-logo.png" alt="Interlock" class="project-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy">
+                    <div class="project-emoji" style="display:none">🧊</div>
+                    <h3>Interlock</h3>
+                    <p>Chrome extension that blocks digital distractions and helps you reclaim deep focus.</p>
+                    <div class="project-meta"><span class="project-tag">Chrome Extension</span><span class="project-status">Live</span></div>
+                </a>
+                <a href="https://www.youtube.com/@Rockyislearning" target="_blank" class="project-card reveal reveal-d3">
+                    <div class="project-emoji">🏔️</div>
+                    <h3>Voices from the Arctic</h3>
+                    <p>Documentary interviews from an Arctic cruise expedition. Stories from the edge of the world.</p>
+                    <div class="project-meta"><span class="project-tag">Documentary · YouTube</span><span class="project-status">Ongoing</span></div>
+                </a>
+                <a href="#" class="project-card reveal reveal-d4">
+                    <div class="project-emoji">📡</div>
+                    <h3>What Silicon Valley Said This Week</h3>
+                    <p>Weekly digest tracking 34 AI founders' latest takes on X. AI-collected, human-curated.</p>
+                    <div class="project-meta"><span class="project-tag">Newsletter</span><span class="project-status">Weekly</span></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Past Life</div>
+                <h2 class="section-title">Competitive gaming</h2>
+            </div>
+            <div class="gaming-row reveal reveal-d1">
+                <div class="gaming-card">
+                    <div class="gaming-label">Hearthstone</div>
+                    <div class="gaming-rank">Rank #1</div>
+                    <div class="gaming-detail">China Server · Nov 2018</div>
+                </div>
+                <div class="gaming-card">
+                    <div class="gaming-label">Dota 2</div>
+                    <div class="gaming-rank">Top 100</div>
+                    <div class="gaming-detail">China Server · Tried out for FTD Academy</div>
+                </div>
+                <div class="gaming-insight">Competitive gaming and building products are the same thing — making optimal decisions with incomplete information, then owning the outcome.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section exp-section" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Experience</div>
+                <h2 class="section-title">Career path</h2>
+            </div>
+            <div class="timeline reveal">
                 <div class="timeline-item">
-                    <div class="timeline-date">2024 — 2025</div>
-                    <div class="timeline-content">
-                        <h3>Cloud Ecosystem Manager</h3>
-                        <div class="company">Huawei Cloud · Jakarta, Indonesia</div>
-                        <p>Local ecosystem development for Huawei Cloud in Indonesia. Partner enablement, go-to-market strategy.</p>
+                    <div class="timeline-date">2025 — Present</div>
+                    <div class="timeline-body">
+                        <h3>AI Indie Developer</h3>
+                        <div class="company">Independent</div>
+                        <p>Building AI-native products<br>iOS · Chrome · Agents</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2020 — 2024</div>
-                    <div class="timeline-content">
+                    <div class="timeline-date">2024 — 2025</div>
+                    <div class="timeline-body">
+                        <h3>Cloud Ecosystem Manager</h3>
+                        <div class="company">Huawei Cloud · Jakarta</div>
+                        <p>Local ecosystem development<br>Partner enablement</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 — 2024</div>
+                    <div class="timeline-body">
                         <h3>Partner Development Manager</h3>
-                        <div class="company">Huawei Cloud · Asia-Pacific, Africa, Latin America</div>
-                        <p>Software ecosystem across APAC, Africa, and LATAM. Helped partners achieve commercial success on Huawei Cloud.</p>
+                        <div class="company">Huawei Cloud · Singapore</div>
+                        <p>Cloud Marketplace monetization<br>Software partner ecosystem</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 — 2022</div>
+                    <div class="timeline-body">
+                        <h3>Solutions Engineer</h3>
+                        <div class="company">Huawei Technologies · China</div>
+                        <p>Carrier pre-sales<br>Network product line</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2018 — 2019</div>
-                    <div class="timeline-content">
-                        <h3>MSc Data Science & Analytics</h3>
+                    <div class="timeline-body">
+                        <h3>MSc Data Science</h3>
                         <div class="company">University of Leeds</div>
-                        <p>Statistical modelling, machine learning, applied data science.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2013 — 2017</div>
+                    <div class="timeline-body">
+                        <h3>BSc Economic Statistics</h3>
+                        <div class="company">ZUEL</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="divider"></div>
-
-        <!-- Projects -->
-        <section>
-            <div class="section-label">Projects</div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">🍎</div>
-                    <h3>FreshKeeper 食历</h3>
-                    <p>AI-powered kitchen inventory app. Snap a photo and let AI identify your ingredients, track expiry dates, reduce food waste.</p>
-                    <span class="project-tag">Mobile App · AI</span>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">🧊</div>
-                    <h3>Interlock</h3>
-                    <p>Chrome extension to reduce digital distraction and reclaim focus.</p>
-                    <span class="project-tag">Chrome Extension</span>
-                </div>
-                <a href="https://www.youtube.com/@Rockyislearning" target="_blank" class="project-card">
-                    <div class="project-icon">🏔️</div>
-                    <h3>Voices from the Arctic</h3>
-                    <p>Documentary interviews from an Arctic cruise expedition. Stories from the edge of the world.</p>
-                    <span class="project-tag">Documentary · YouTube</span>
-                </a>
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Beliefs</div>
+                <h2 class="section-title">What drives me</h2>
             </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- Gaming -->
-        <section>
-            <div class="section-label">Past Life: Competitive Gaming</div>
-            <div class="gaming-stats">
-                <div class="gaming-card">
-                    <div class="game-name">Hearthstone 炉石传说</div>
-                    <div class="rank">Rank #1</div>
-                    <div class="rank-detail">China Server</div>
+            <div class="beliefs-list reveal reveal-d1">
+                <div class="belief-item">
+                    <div class="belief-title">Build tools that change behavior</div>
+                    <div class="belief-desc">Technology matters when it gives ordinary people capabilities they never had before.</div>
                 </div>
-                <div class="gaming-card">
-                    <div class="game-name">Dota 2</div>
-                    <div class="rank">Top 100</div>
-                    <div class="rank-detail">China Server · Tried out for FTD Academy</div>
+                <div class="belief-item">
+                    <div class="belief-title">"What not to do" matters more than "what to do"</div>
+                    <div class="belief-desc">Clear boundaries create real focus.</div>
+                </div>
+                <div class="belief-item">
+                    <div class="belief-title">Information flow shapes the world</div>
+                    <div class="belief-desc">From cloud ecosystems to LLMs — how do we move knowledge between minds more efficiently?</div>
+                </div>
+                <div class="belief-item">
+                    <div class="belief-title">Meaning is found through experience</div>
+                    <div class="belief-desc">So go experience things. Build things. Make mistakes.</div>
                 </div>
             </div>
-            <p style="font-size: 14px; color: var(--text-muted); margin-top: 16px; line-height: 1.6;">
-                Competed at the highest amateur level in two of gaming's most demanding titles. 
-                Discovered that talent without obsession only gets you so far — then pivoted that intensity into building things.
-            </p>
-        </section>
+        </div>
+    </section>
 
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <!-- Beliefs -->
-        <section>
-            <div class="section-label">What I Believe</div>
-            <div class="beliefs">
-                <div class="belief">
-                    <em>Build tools that change behavior.</em> Technology matters when it makes ordinary people stronger and freer.
-                </div>
-                <div class="belief">
-                    <em>"What not to do" is easier to stick to than "what to do."</em> Constraints create clarity.
-                </div>
-                <div class="belief">
-                    <em>Information transfer is everything.</em> From cloud ecosystems to LLMs — I keep coming back to the same obsession: how do we move knowledge between minds?
-                </div>
-                <div class="belief">
-                    <em>The meaning of life is to search for meaning.</em> So go experience things.
-                </div>
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">When I'm Not Building</div>
+                <h2 class="section-title">The other side of life</h2>
             </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- Interests -->
-        <section>
-            <div class="section-label">When I'm Not Building</div>
-            <div class="interests">
-                <span class="interest-tag">🏔️ Mountain Hiking</span>
-                <span class="interest-tag">🎾 Tennis</span>
-                <span class="interest-tag">🏋️ Gym & Yoga</span>
-                <span class="interest-tag">🍳 Cooking</span>
-                <span class="interest-tag">🎵 Music (ex-band member)</span>
-                <span class="interest-tag">🎬 Coen Brothers Fan</span>
-                <span class="interest-tag">✈️ Travel</span>
-                <span class="interest-tag">📖 Camus Reader</span>
+            <div class="interests-wrap reveal">
+                <span class="interest-pill">🏔️ Mountain Hiking</span>
+                <span class="interest-pill">🎾 Tennis</span>
+                <span class="interest-pill">🏋️ Gym & Yoga</span>
+                <span class="interest-pill">🎵 Music (ex-band member)</span>
+                <span class="interest-pill">🎬 Coen Brothers Fan</span>
+                <span class="interest-pill">✈️ Travel</span>
+                <span class="interest-pill">📖 Camus Reader</span>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <p class="quote">"Create a tool to make information exchange easier."</p>
-            <p>Rocky Li · 2026</p>
-        </footer>
-    </div>
+    <section class="contact-section" id="contact">
+        <div class="container reveal">
+            <h2 class="contact-title">Let's build something together?</h2>
+            <p class="contact-desc">Whether it's product collaboration, AI exploration, or just exchanging ideas — I'm always happy to meet interesting people.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/linyi-li-899200171/" class="btn btn-primary" target="_blank">LinkedIn</a>
+                <a href="mailto:rockyl@player1.bot" class="btn btn-secondary">rockyl@player1.bot</a>
+                <a href="https://www.youtube.com/@Rockyislearning" class="btn btn-secondary" target="_blank">YouTube</a>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>Rocky Li · 2026 · player1.bot</p></footer>
+
+    <script>
+        // Nav
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Card glow
+        document.querySelectorAll('.project-card, .about-card').forEach(card => {
+            const glow = document.createElement('div');
+            glow.classList.add('card-glow');
+            card.appendChild(glow);
+            card.addEventListener('mousemove', e => {
+                const r = card.getBoundingClientRect();
+                glow.style.left = (e.clientX - r.left) + 'px';
+                glow.style.top = (e.clientY - r.top) + 'px';
+            });
+        });
+
+        // ===== FLOW CANVAS =====
+        const canvas = document.getElementById('flowCanvas');
+        if (canvas && window.innerWidth > 768) {
+            const ctx = canvas.getContext('2d');
+            let W, H;
+
+            function resize() {
+                const rect = canvas.parentElement.getBoundingClientRect();
+                W = canvas.width = canvas.offsetWidth;
+                H = canvas.height = canvas.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const colors = ['57,57,255', '219,184,255', '255,91,34', '242,187,5', '14,165,160'];
+            const particles = [];
+            const count = 50;
+
+            class Particle {
+                constructor() { this.reset(true); }
+                reset(init) {
+                    this.x = init ? Math.random() * W : -10;
+                    this.y = Math.random() * H;
+                    this.vx = 0.3 + Math.random() * 0.8;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                    this.r = 1.5 + Math.random() * 2;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.alpha = 0.15 + Math.random() * 0.35;
+                    this.freq = 0.005 + Math.random() * 0.01;
+                    this.amp = 20 + Math.random() * 40;
+                    this.phase = Math.random() * Math.PI * 2;
+                    this.t = 0;
+                }
+                update() {
+                    this.t++;
+                    this.x += this.vx;
+                    this.y += Math.sin(this.t * this.freq + this.phase) * 0.5;
+                    if (this.x > W + 10) this.reset(false);
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < count; i++) particles.push(new Particle());
+
+            const linkDist = 100;
+
+            function animate() {
+                ctx.clearRect(0, 0, W, H);
+
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < linkDist) {
+                            const opacity = (1 - dist / linkDist) * 0.08;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(57,57,255,${opacity})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                particles.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => { e.preventDefault(); document.querySelector(link.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' }); });
+        });
+    </script>
 </body>
 </html>
